@@ -1,1 +1,7 @@
 .idea
+first_gui/scrap
+*/.ipynb_checkpoints/*
+**/.ipynb_checkpoints
+first_gui/sample1
+first_gui/sample2
+first_gui/sample3
