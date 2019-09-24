@@ -1,0 +1,67 @@
+To train with yolo follow the lines--
+
+1/ make a folder where you will put all pic(RGB) and text file(containing bounding region in YOLO format). To make this file follow the next point (***) named as 'make yolo format text file'. Otherwise directly go to point number 2
+
+*** make yolo format text file:
+Cloned the repo from https://github.com/ManivannanMurugavel/YOLO-Annotation-Tool
+Here, you will see two folder. Images and Labels. These 2 are main folder. In 'Images' folder keep all of your RGB images in the specific folder. For example, you have images of 10 classes.
+So, make 001,002,......,0010 folder and keep the corresponding images in the respective folder.
+
+Now, keep the annotated text file in the Labels folder as the same way you have kept files and folders in the Images folder. Here, one question is who will give you the annotated text file. Actually, annotated text file means the information ROI of the desired object in each image. In my case, I have generated it directly from Unreal Engine using UnrealCV.
+
+Now keeping the files has finished. The next step is to use the convert.py file. In this file check some point ---
+
+* In line 7 you will find the class list. Fill it up with your required class. class = [001,002,..........,0010] (don't put dot dot here :P)
+* In line 29 change cls = "001" to your desired class for which you are going to make the YOLO typed text file.
+* In line 26 and 27 mention your folder path for the already made text file and output YOLO typed text file path respectively. In the output path make the folder for each class where ypu want to save the file. Keep the folder name same as the input folder path.
+* Then check in which format you have saved your image. In my case that was .png. But convert.py file by default will take .jpg format. So, change all .jpg to your desired image format in the convert.py file.
+
+then run convert.py by writing python convert.py in the terminal from the directory where convert.py is situated.
+
+DONE !!!
+
+
+
+
+
+2/ Give this folder name 'obj' and put in in the darknet/data/ folder
+3/ put obj.names and obj.data these two files darknet/data/ folder
+
+In obj.data file you can change train and test folder info. 
+train= data/train.txt
+test= data/test.txt
+names = data/obj.names  
+backup = backup/
+
+and also change the classes number
+
+4/ put process.py python file darknet/data/ folder to create train.txt and test.txt. Change the directory address in the process.py file
+5/ In darknet/cfg/ folder put yolo-obj.cfg file (you will find it in local pc/Atif's pc). Here change the classes number as your desire or goal.
+6/ In darknet/ folder put darknet53.conv.74 file. It is a configured training file. You can also download it from https://github.com/mathieuorhan/darknet
+7/ Then in Makefile change GPU=0 to GPU=1 if you want to use GPU and then write in terminal 'make' and hit Enter. If you don't want to use GPU leave this line and go to point 8
+8/ In the terminal go to cd /home/user/darknet and write ./darknet detector train data/obj.data cfg/yolo-obj.cfg darknet53.conv.74 and wait to finish the training
+
+9/ Let's assume you have done a training and you have a trained weight file named xyz_weights. If you in fututre again want to do the training for those DATASET just write --
+./darknet detector train data/obj.data cfg/yolo-obj.cfg backup/xyz_weights
+
+
+** here some important info for which I have sometimes encountered error.
+In the yolo-obj.cfg line 610 and 611 check. classes = give the desired number and 'num' by default given 9. So, why ths num?? It helps to give the filter number.
+formula of filter number -- yolov3 >>> filter = (num/3)*(classes+5)
+yolov2 >>> num*(classes+5)
+
+BUT where this filter number you will change ?? go to yolo-obj.cfg and press ctrl+F then write 'yolo' (without inverted comma). you will see 3 times 'yolo' will be appeared. before this 'yolo' word you will see 'filters' is written. Change the number here. You will also see other 'filter' also written in the other places of the file but no need to change.
+
+For testing image:
+
+1/ to perform detection usng yolo and save the predicted image with the name "predictions.jpg"--
+
+./darknet detector test data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_1200.weights data/chair.jpg
+
+The problem of that command is that it always overwrite the old predicted image with the new test image as it always take the name "predictions.jpg". Look at number 2 to solve it.
+
+
+2/ To save predicted image in a new name(it will work at a time for single image)--
+
+./darknet detector test data/obj.data cfg/yolo-obj.cfg backup/yolo-obj_1200.weights data/somat_795.jpg -out myfile_somat
+
