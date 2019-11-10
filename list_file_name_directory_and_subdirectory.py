@@ -1,3 +1,8 @@
+# code to create csv file for image classification training.
+# Folder name can be given using string like the product or object name.
+# All of the folder will be ordered in alphabetical order.
+# This order will be act as class.
+
 import os
 
 # def getListOfFiles(dirName):
