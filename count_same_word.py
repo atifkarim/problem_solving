@@ -1,3 +1,4 @@
+# find the repeated word in a given sentence
 import numpy as np
 import collections
 
