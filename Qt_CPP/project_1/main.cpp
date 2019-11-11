@@ -3,7 +3,7 @@
 #include<typeinfo>
 using namespace std;
 
-int my_array[] = {10,-20,30,-40,50};
+/*int my_array[] = {10,-20,30,-40,50};
 int sum_of_element_of_array = 0;
 int length_of_array = sizeof(my_array)/sizeof(my_array[0]);
 
@@ -69,4 +69,28 @@ cout<<"here type is: "<<typeid(my_array).name()<<endl;
 
 
   return 0;
+}*/
+
+std::vector<std::vector<int>> two_dim_array;
+int number_a = 10;
+int main()
+{
+  for(int i=0;i<2;i++)
+  {
+    for(int j=0;j<3;j++)
+    {
+      cout<<"hhh"<<endl;
+      two_dim_array[i].push_back(j);
+//          number_a++;
+      //cout<<number_a;
+    }
+  }
+  cout<<"new array"<<endl;
+  for (int i=0;i<2;i++){
+    for(int j=0;j<3;j++){
+      cout<<two_dim_array[i][j]<<endl;
+    }
+  }
+  return 0;
+
 }
