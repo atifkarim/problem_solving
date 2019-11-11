@@ -7,3 +7,4 @@ first_gui/sample2
 first_gui/sample3
 
 Qt_CPP/*build-*
+Qt_CPP/*/*.pro.user
