@@ -25,3 +25,5 @@ new_list = list(filter(lambda x: (x%2 == 0) , my_list))
 print(type(new_list))
 # Output: [4, 6, 8, 12]
 print('new_list: ',new_list)
+
+##################################################
