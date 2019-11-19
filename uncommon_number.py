@@ -13,7 +13,7 @@ lst = [9,3,9,3,9,3,7]
 # # [4, 6]
 
 
-# try to make own counter
+############################### try to make own counter
 # m = 1
 n=0
 p=1
@@ -71,3 +71,4 @@ print(x)
 for index, i in enumerate(lst):
     if i != e.all():
         print(i)
+
