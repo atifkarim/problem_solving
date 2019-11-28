@@ -1,20 +1,36 @@
 import numpy as np
 
-first_num = int(input())
-second_num = int(input())
+first_num = float(input())
+second_num = float(input())
+
+print(first_num)
+print(type(first_num))
+f1 = round(first_num)
+# f1 = int(first_num)
+print('here: ',f1,' ,type:',type(f1))
+print(second_num)
+print(type(second_num))
+g1 = round(second_num)
+print('here: ',g1,' ,type:',type(g1))
+
+first_num = f1
+second_num = g1
+
+print('first : ',first_num)
+print('second : ',second_num)
 
 count_even = 0
 count_odd = 0
 final_count = 0
 
 def cycle_length(x, count_even, count_odd, final_count):
-    if x == 1:
+    if x == 1 or x <=0:
         # print('TERMINATE ----------, I am now: ',x,' so I should stop')
         count_even = count_even
         count_odd = count_odd
         # print('In this case count_even: ', count_even,' and count_odd: ', count_odd)
         final_count = count_even+count_odd
-        # print('TERMINATION ZONE')
+        print('TERMINATION ZONE because value is: ',x)
         # print('final count: ', final_count)
     elif x%2 == 0:
         count_even = count_even+1
@@ -71,13 +87,13 @@ maximal_length_array = np.array(maximal_length_array)
 
 print('step size: ', stepsize)
 for i in range (first_num,second_num_1, stepsize):
-    # print('code is exuting for: ',i)
+    print('code is exuting for: ',i)
     final_even, final_odd, final_count_1 = cycle_length(i, count_even, count_odd, final_count)
-    # print('!!!!!!!!!!!!!!!',final_count_1)
+    print('!!!!!!!!!!!!!!!',final_count_1)
     # maximal_length_array.append(final_count_1)
     maximal_length_array = np.append(maximal_length_array, final_count_1)
 
-# len(maximal_length_array)
+# len(maximal_length_array)0
 # print('array: ',maximal_length_array)
 # maximal_length_array_array = np.array(maximal_length_array)
 max_len = int(maximal_length_array.max())
