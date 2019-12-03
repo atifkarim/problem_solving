@@ -9,3 +9,4 @@ first_gui/sample3
 Qt_CPP/*build-*
 Qt_CPP/*/*.pro.user
 Qt_CPP/*/*.pro
+rasp_cam
