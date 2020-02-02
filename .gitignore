@@ -10,3 +10,10 @@ Qt_CPP/*build-*
 Qt_CPP/*/*.pro.user
 Qt_CPP/*/*.pro
 rasp_cam
+<<<<<<< HEAD
+=======
+
+convert_yolo_folder/*.txt
+convert_yolo_folder/Images
+convert_yolo_folder/Labels
+>>>>>>> test
