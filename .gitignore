@@ -17,3 +17,9 @@ convert_yolo_folder/*.txt
 convert_yolo_folder/Images
 convert_yolo_folder/Labels
 >>>>>>> test
+
+**build
+**dist
+**__pycache__
+*.ico
+*.spec
