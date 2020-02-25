@@ -1,8 +1,10 @@
 # Define the goal
-uint32 dishwasher_id  # Specify which dishwasher we want to use
+float32 dishwasher_id
+float32 dishwasher_id1
 ---
 # Define the result
-uint32 total_dishes_cleaned
+float32 total_dishes_cleaned
+bool result2
 ---
 # Define a feedback message
 float32 percent_complete

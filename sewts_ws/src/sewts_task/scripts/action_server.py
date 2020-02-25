@@ -17,15 +17,33 @@ class DoDishesServer:
 
   def execute(self, goal):
     print "printing goal: ",goal.dishwasher_id
+    print "printing goal for 2: ",goal.dishwasher_id1
     # Do lots of awesome groundbreaking robot stuff here
-    if goal.dishwasher_id==1:
+    #var_result
+    if goal.dishwasher_id!=0:
+	var_result = True
+	#goal.dishwasher_id=None
 	print "i am here"
-	self._feedback.percent_complete=15.00
-	print "printed already: ",self._feedback.percent_complete
+	#self._feedback.percent_complete=24.00
+	self._result.result2=var_result        
+	#self._result.total_dishes_cleaned=15.00
+	#print "printed already: ",self._feedback.percent_complete
+	self.server.set_succeeded(self._result)
+	#return 0
     
-	
+    #self.server.publish_feedback(self._feedback)
+    #self.server.set_succeeded(self._feedback)
     #self.server.set_succeeded(self._result)
-    self.server.publish_feedback(self._feedback)
+
+    elif goal.dishwasher_id1!=0:
+	print "goal here: ",goal.dishwasher_id1
+	if goal.dishwasher_id1==1:
+	    #goal.dishwasher_id1=None
+	    price = 30.6
+	    self._result.total_dishes_cleaned=price
+	    print "price in py: ",self._result.result2
+	    self.server.set_succeeded(self._result)
+    return 0
 
 if __name__ == '__main__':
   rospy.init_node('do_dishes_server')

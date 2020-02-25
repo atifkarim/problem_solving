@@ -1,3 +1,5 @@
 int64 id
+int64 id1
 ---
-string status
+bool status
+string status1

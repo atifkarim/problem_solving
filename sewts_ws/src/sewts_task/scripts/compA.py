@@ -8,11 +8,17 @@ import rospy
 #    return AddTwoIntsResponse(req.a + req.b)
 
 def product_id(req):
-    id=req.id
-    print "id: ",type(id)
-    if id==1:
-        l="product found"
-        return AddTwoIntsResponse(l)
+    if req.id!=None:
+    	id=req.id
+    	print "id: ",id
+        if id==0:
+           l=True
+	   return AddTwoIntsResponse(l)
+    elif req.id1!=None:
+        id1=req.id1
+        if id1==1:
+           l="samsung"
+    	   return AddTwoIntsResponse(l)
 
 
 def add_two_ints_server():
