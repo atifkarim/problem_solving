@@ -121,6 +121,12 @@ catkin_package(
   CATKIN_DEPENDS roscpp rospy std_msgs actionlib_msgs
   DEPENDS system_lib
 )
+########################################################################################################################################################
+#find_package(catkin REQUIRED COMPONENTS roslaunch)
+#roslaunch_add_file_check(launch)
+########################################################################################################################################################
+
+
 
 ###########
 ## Build ##
@@ -131,6 +137,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library

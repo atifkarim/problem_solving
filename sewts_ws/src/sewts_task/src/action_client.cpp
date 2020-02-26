@@ -109,7 +109,7 @@ int main (int argc, char **argv)
   sewts_task::DoDishesResult result;
   sewts_task::DoDishesFeedback feedback;
 
-  float d,e;
+  int d,e;
   bool ex=true;
 //float s;
   // Fill in goal here
@@ -118,38 +118,48 @@ int main (int argc, char **argv)
   
   std::cout<<"Enter your ID: ";
   std::cin>>d;
-  goal.dishwasher_id=d;
+  goal.goal_check_product=d;
   ac.sendGoal(goal);
   //ac.sendGoal(goal,&feedbackCb);
   ac.waitForResult(ros::Duration(5.0));
-  ac.getResult();
+  //ac.getResult();
   //DoDishesFeedbackConstPtr feedback;
-  bool availability_product=ac.getResult()->result2;
+  bool availability_product=ac.getResult()->result_presence_of_product;
+  //printf(ac.getResult()->percent_complete);
 
   if (availability_product==true)
-  {d=0.0;
-  goal.dishwasher_id=d;
+  {d=0;
+  goal.goal_check_product=d;
   std::cout<<"Object found\nPress 1 for check Price\nPress 2 for check rating\nPress 3 for check weight\nPlease press desire button: ";
   std::cin>>e;
-  goal.dishwasher_id1=e;
+  goal.goal_check_product_description=e;
   ac.sendGoal(goal);
   ac.waitForResult(ros::Duration(5.0));
   ac.getResult();
   
-  float s=ac.getResult()->total_dishes_cleaned;
-
-  std::cout<<"got price  "<< s <<std::endl;
-  e=0.0;
-  goal.dishwasher_id1=e;
+  int s=ac.getResult()->result_product_description;
+  if (s==0)
+  {std::cout<<"User given wrong val:  "<< s <<std::endl;
+  }
+  else
+  {std::cout<<"------------got price  "<< s <<std::endl;
+  }
+//  std::cout<<"got price  "<< s <<std::endl;
+  e=0;
+  goal.goal_check_product_description=e;
   char exit;
   std::cout<<"Would you like to quit,press y/n";
   std::cin>>exit;
   if (exit=='y')
   {
    ex=false;
+   system("pkill roslaunch"); // To Kill ROSLAUNCH file
   } 
   }
-  }while(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED && ex);
+  else{
+   std::cout<<"Please provide correct product ID"<<std::endl;
+  }
+  }while((ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED || ex) && ex);
   /*if (s == 15.0)
     printf("Ok\n");
   ros::spin();

@@ -1,10 +1,11 @@
 # Define the goal
-float32 dishwasher_id
-float32 dishwasher_id1
+int32 goal_check_product
+int32 goal_check_product_description
 ---
 # Define the result
-float32 total_dishes_cleaned
-bool result2
+#int32 total_dishes_cleaned
+int32 result_product_description
+bool result_presence_of_product
 ---
 # Define a feedback message
 float32 percent_complete

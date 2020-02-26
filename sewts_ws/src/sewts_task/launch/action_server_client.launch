@@ -1,0 +1,6 @@
+<launch>
+  <node name="action_server" pkg="sewts_task" type="action_server.py" output="screen"/>
+  <node name="action_client" pkg="sewts_task" type="action_client" output="screen"/>
+</launch>
+
+<!-- required="true" -->
