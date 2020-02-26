@@ -70,7 +70,7 @@ add_service_files(
 ## Generate actions in the 'action' folder
 add_action_files(
    DIRECTORY action
-   FILES DoDishes.action
+   FILES ProductSearch.action
 #   Action1.action
 #   Action2.action
  )
