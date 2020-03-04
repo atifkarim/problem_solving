@@ -1,4 +1,4 @@
-# Creation of obj.names is possibe with this code. It will take all of the classes name using the folder's name from the referred path 
+# Creation of obj.names is possibe with this code. It will take all of the classes name using the folder's name from the referred path
 # This file would be used in training YOLO 
 import os
 
