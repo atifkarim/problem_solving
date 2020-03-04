@@ -1,3 +1,5 @@
+# Creation of obj.names is possibe with this code. It will take all of the classes name using the folder's name from the referred path 
+# This file would be used in training YOLO 
 import os
 
 dirName = '/home/atif/machine_learning_stuff/ml_image/train_image_AI_reduced/new_method/'
@@ -10,12 +12,12 @@ evaluation_metrics_file_path = current_dir+'/'+file_name
 if not os.path.isfile(evaluation_metrics_file_path):
     f = open(evaluation_metrics_file_path,'a')
     f.close()
-    print('metrics file now created')
+    print('file now created')
 else:
     os.remove(evaluation_metrics_file_path)
     f = open(evaluation_metrics_file_path,'a')
     f.close()
-    print('metrics file removed and created')
+    print('file removed and created')
 
 
 folder_list = []
