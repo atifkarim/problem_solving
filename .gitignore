@@ -9,6 +9,7 @@ first_gui/sample3
 Qt_CPP/*build-*
 Qt_CPP/*/*.pro.user
 Qt_CPP/*/*.pro
+Qt_CPP/.vscode
 rasp_cam
 <<<<<<< HEAD
 =======
@@ -23,8 +24,6 @@ convert_yolo_folder/Labels
 **__pycache__
 *.ico
 *.spec
-
-
 
 
 
