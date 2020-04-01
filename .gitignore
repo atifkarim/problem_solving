@@ -5,6 +5,12 @@ first_gui/scrap
 first_gui/sample1
 first_gui/sample2
 first_gui/sample3
+.vscode
+tempCodeRunnerFile.py
+tempCodeRunnerFile.cpp
+Qt_CPP/tempCodeRunnerFile.cpp
+
+photo.jpg
 
 Qt_CPP/*build-*
 Qt_CPP/*/*.pro.user
