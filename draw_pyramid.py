@@ -31,3 +31,12 @@ for i in range (start_p, end_p+end_p, 2):
     print(' '*inter_p,(i)*'*')
     inter_p = inter_p-1
     # print(inter_p)
+
+print('\n')
+print("#"*50)
+print('\n')
+
+here_p = end_p
+for i in range(start_p, end_p, step_p):
+    print(' '*i,here_p*'*')
+    here_p = here_p-1
