@@ -1,4 +1,4 @@
-#!/home/atif/myenv/bin/python3
+#!/home/atif/myenv/bin/python
 
 import cv2
 import matplotlib.pyplot as plt
