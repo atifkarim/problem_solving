@@ -1,3 +1,8 @@
+/*
+// with one construcotor it is possible to do all of the task of 3 types of constructor. see in the MAIN function
+*/
+
+
 #include<iostream>
 #include<string>
 
