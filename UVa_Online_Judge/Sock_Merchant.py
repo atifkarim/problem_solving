@@ -1,11 +1,12 @@
 # https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs[0]=interview-preparation-kit&playlist_slugs[1]=warmup
 
-sock_n = 9
+sock_n = 7
 color_arr = ['None']*sock_n
 # print(sock_n)
 # print(type(color_arr))
-# color_arr = [20,20,20,20]
-color_arr = [10,20,20,10,10,30,50,10,20]
+# color_arr = [10]
+color_arr = [20,20,20,20,20,10,10]
+# color_arr = [10,20,20,10,10,30,50,10,20]
 # color_arr = [10,20,30,10,20,10]
 while_loop_arr = color_arr
 same_color = 0
