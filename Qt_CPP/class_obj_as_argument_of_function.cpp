@@ -17,14 +17,17 @@ class Summation{
             int d = x+y;
             cout<<"op from public function SUM is: "<<d<<endl;
             cout<<"value coming from private member: a: "<<a<<" b: "<<b<<" and sum is: "<<a+b<<endl;
-        ~Summation()
             return d;
+        }
+
+        ~Summation(){
+            cout<<"Destructor is called\n"<<endl;
         }
 };
 
 // constructor is declaring
 Summation::Summation(int q, int p){
-    cout<<"\nHey constrictor is called"<<endl;
+    cout<<"\nHey constructor is called"<<endl;
     a =q; b = p;
 }
 
@@ -41,7 +44,7 @@ int main(){
 
     cout<<"now calling function which takes object as an argument"<<endl;
 
-    obj_function(obj_1);
+    obj_function(obj_1); // function calling by using CLASS object
 
     return 0;
 }
