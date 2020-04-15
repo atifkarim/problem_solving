@@ -10,7 +10,7 @@ for example ->>> [0] result will be [1]
 [1,2,3] result will be [1,2,4]
 '''
 
-a = [0,1,0,-1]
+a = [9,0,9]
 b = [None]*len(a)
 print(b)
 
