@@ -1,5 +1,5 @@
 /*
-A problem to create stack of matrix by using struct or class. User will give the size of main container and then each box of the container will be filled with the other matrix/array
+A problem to create stack of matrix by using struct or class. User will give the size of main container and then each box of the container will be filled with the other matrix/array by having num from user
 */
 #include <iostream>
 #include <vector>
