@@ -1,4 +1,4 @@
-// While a constructor can deal the othre constructor
+// While a constructor can deal the other constructor
 // Former version you can see in the constructor_initialization_list.cpp
 
 #include<iostream>
@@ -12,9 +12,10 @@ class Player{
         int health;
         int xp;
     public:
-    Player();
-    Player(string);
-    Player(string, int, int);
+        Player();
+        Player(string);
+        Player(string, int);
+        Player(string, int, int);
         
         void set_name(string name_val){
             name = name_val;
@@ -29,26 +30,33 @@ class Player{
 
 // Constructors are calling
 // Initilaizer will be added in the constructor list
-        Player::Player()
-        : Player{"None",0,0}
-        {
-            cout<<"------------------------------------NO args constructor is called------------------------------------"<<endl;
-        }
+Player::Player()
+: Player{"None",0,0}
+{
+cout<<"------------------------------------NO args constructor is called------------------------------------"<<endl;
+}
 
-        Player::Player(string name_val)
-        : Player{name_val,0,0}
-        {   
-            cout<<"------------------------------------2 args constructor is called------------------------------------"<<endl;
-            cout<<"string constructor is called where name is: "<<name<<endl;
-        }
+Player::Player(string name_val)
+: Player{name_val,0,0}
+{   
+cout<<"------------------------------------1 args constructor is called------------------------------------"<<endl;
+cout<<"string constructor is called where name is: "<<name<<endl;
+}
 
-        Player::Player(string name_val_1, int health_1, int xp_1)
-        : name{name_val_1}, health{health_1},xp{xp_1}
-        {       
-                cout<<"------------------------------------3 args constructor is called------------------------------------"<<endl;
-                cout<<"Here name: "<<name_val_1<<" ,health: "<<health_1<<" ,xp: "<<xp_1<<endl;
+Player::Player(string name_val, int health_val)
+: Player{name_val,health_val,0}
+{   
+cout<<"------------------------------------2 args constructor is called------------------------------------"<<endl;
+cout<<"string called where name is: "<<name<<" and, health val from constructor is: "<<health_val<<endl;
+}
 
-        }
+Player::Player(string name_val_1, int health_1, int xp_1)
+: name{name_val_1}, health{health_1},xp{xp_1}
+{       
+    cout<<"------------------------------------3 args constructor is called------------------------------------"<<endl;
+    cout<<"Here name: "<<name_val_1<<" ,health: "<<health_1<<" ,xp: "<<xp_1<<endl;
+
+}
 
 
 int main(){
@@ -63,6 +71,11 @@ int main(){
     Player hero{"hero"};
     hero.set_name("here HERO");
     // third constructor will call
+
+    cout<<"\ncalling constructor who has 2 arguments"<<endl;
+    Player hero_2{"Mohammod", 58};
+
+    cout<<"\ncalling constructor who has 3 arguments"<<endl;
     string name_3; int health_3; int xp_3;
     cin>>name_3; cin>>health_3; cin>>xp_3;
     Player third_constructor{name_3, health_3, xp_3};

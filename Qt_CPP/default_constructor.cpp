@@ -51,6 +51,8 @@ int main(){
 
     Player hero{"hero"};
     hero.set_name("here HERO");
+    string get_name_1= hero.get_name();
+    cout<<"from get name 1: using constructor: "<<get_name_1<<endl;
     
 
     return 0;

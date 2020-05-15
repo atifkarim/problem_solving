@@ -8,7 +8,7 @@ using namespace std;
 
 class Test{
     private:
-    int *b;
+        int *b;
         int a;
     public:
     // int a; int *b;

@@ -34,6 +34,8 @@ int main(){
     Player Frank("Atif");
     Player hero("Atif",45);
     Player villain("Atif",45,-58);
+    Player *enemy = new Player("Enemy", 89, 65);
+    delete enemy;
 
 
     return 0;

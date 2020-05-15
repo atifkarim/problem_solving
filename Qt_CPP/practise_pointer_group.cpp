@@ -70,7 +70,7 @@ int main()
     int a=0;
     int row=2;
     int col=2;
-    int *ptr;
+    int *ptr{nullptr};
     
     
     int matrix[row][col];
@@ -133,6 +133,24 @@ cout<<"#########################################"<<endl;
     // printf("%d ", *(ptr + i));
     cout<<*(z+i)<<" ";
   }
+
+  int  test[2][3] = { {2, 4, 5}, {9, 0 ,0}};
+  int * testPtr;
+  testPtr = &test[0][0];
+
+  cout<<"\n\ntest Array and Pointer is Pinting\n";
+  cout<<"Test Array: "<<&test[0][0]<<" ,and testPtr: "<<&testPtr<<" ,and val: "<<*testPtr<<endl;
+
+    int s_1=0;
+  for(int t=0;t<2;t++){
+      for(int s=0;s<3;s++){
+          cout<<*(testPtr+s_1)<<" ";
+          s_1++;
+      }
+      cout<<endl;
+  }
+
+
    
    return 0;
 }

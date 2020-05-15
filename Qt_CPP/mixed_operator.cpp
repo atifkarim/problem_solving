@@ -40,15 +40,17 @@
 // string::shrink_to_fit
 #include <iostream>
 #include <string>
-
+using namespace std;
 int main ()
 {
   std::string str (100,'x');
   std::cout << "1. capacity of str: " << str.capacity() << '\n';
+  str = "Ich liebe Deutschland und Ich arbeite hier";
+  cout<<str<<endl;
 
-  str.resize(10);
+  str.resize(5);
   std::cout << "2. capacity of str: " << str.capacity() << '\n';
-
+  cout<<str<<endl;
   str.shrink_to_fit();
   std::cout << "3. capacity of str: " << str.capacity() << '\n';
 

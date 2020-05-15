@@ -15,6 +15,10 @@ class Player{
         cout<<"here I am: "<<name_1<<" what is told by: "<<name<<endl;
     }
 
+    void Print(){
+        cout<<"name: "<<name<<" ,health: "<<health<<" ,xp: "<<xp<<endl;
+    }
+
     void pointer_take (string name_2){
 
         cout<<"My "<<name_2<<" num is: "<<xp<<endl;
@@ -49,15 +53,25 @@ int main(){
     frank.xp = 12; 
 
 
-    Player *enemy = new Player; // OBJECT calling as pointer
-    // enemy = new Player;
-    (*enemy).name = "Enemy";
+    // Player *enemy = new Player; // OBJECT calling as pointer
+    // // enemy = new Player;
+    // (*enemy).name = "Enemy";
+    // (*enemy).health = 500;
+    // enemy -> xp = 15;
+
+    // enemy->pointer_take("Enemy");
+
+    // delete enemy;
+
+    cout<<"\nPrinting member variable with Pointer: \n";
+    Player *enemy = new Player;
+    enemy ->name = "Pointer Atif";
     (*enemy).health = 500;
-    enemy -> xp = 15;
+    enemy -> xp=89;
+    enemy -> Print();
 
-    enemy->pointer_take("Enemy");
-
-    delete enemy;
+    cout<<"\nPrinting public member function pointer_take: \n";
+    enemy -> pointer_take("Pointer Enemy");
 
 
     cout << "------------------------------------------------------------------------------"<<endl<<endl;
