@@ -1,3 +1,8 @@
+/*
+This code shows working procedure of Constructor and Destructor. Keep focus on using Different scope. 
+Here, you will see that inside of int main() function 3 different scope have called
+*/
+
 #include<iostream>
 #include<string>
 
@@ -48,6 +53,8 @@ cout<<"----------------------------------------------------"<<endl;
     Villain.set_name("Villain");
     // calling of destructor will be reversed in the order of calling of constructor
     }
+
+    // every segment in different scope because it calls destructor for all objects
 
 cout<<"----------------------------------------------------"<<endl;
 {
