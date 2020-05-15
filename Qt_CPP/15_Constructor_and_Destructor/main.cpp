@@ -6,7 +6,7 @@ private:
   int a;
 public:
   Base():a{0}{cout<<"Base No arg constructor is called"<<endl;}
-  Base(int x):a{x}{cout<<"Base single arg constructor is called"<<endl;}
+  Base(int x):a{x}{cout<<"Base single arg constructor is called with value: "<<a<<endl;}
   ~Base(){cout<<"Base Destructor is called\n";}
 };
 
