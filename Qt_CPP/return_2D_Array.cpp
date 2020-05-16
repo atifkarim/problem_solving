@@ -6,7 +6,9 @@ using namespace std;
 typedef vector<int> Array; // a declaration of a 1D vactor whose name is col_vector
 typedef vector<Array> Matrix; // A declaration of a 2D vector whose name is Array
 
-Matrix create_matrix(Array vector_1, int mat_row)
+class ArrayInfo{
+  public:
+    Matrix create_matrix(Array vector_1, int mat_row)
   {
     cout<<"Please give the value for the Matrix\n";
     Matrix Matrix_1(Matrix(mat_row,vector_1)); // A 2D vector named Matrix_1 is assigned with column size as same as vector_1
@@ -34,6 +36,9 @@ Matrix create_matrix(Array vector_1, int mat_row)
   }
 
 
+};
+
+
   int main(){
 
       int mat_row;
@@ -47,7 +52,9 @@ Matrix create_matrix(Array vector_1, int mat_row)
       vec_1.push_back(0);
     }
       cout<<vec_1.size()<<endl;
-      Matrix Matrix_new = create_matrix(vec_1, mat_row);
+      ArrayInfo obj_array;
+
+      Matrix Matrix_new = obj_array.create_matrix(vec_1, mat_row);
 
       cout<<"from main function"<<endl;
 
