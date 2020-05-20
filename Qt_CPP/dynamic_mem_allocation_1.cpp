@@ -40,6 +40,41 @@ class StudentInfo {
         }
 };
 
+class StudentArray{
+    public:
+        int row;
+        int col;
+        int *MakeArray()
+        {
+            cout<<"HIIIIIIIIIIIIIIIIIII"<<endl;
+            int my_array[row][col];
+            for(int i=0;i<row;i++)
+            {
+                for(int j=0;j<col;j++){
+                    cin>>my_array[i][j];
+                }   
+            }
+
+            for(int i=0;i<row;i++){
+                for(int j=0;j<col;j++){
+                    cout<<my_array[i][j]<<" ";
+                }
+                cout<<endl;
+            }
+            int *pointer_array {nullptr};
+            pointer_array = &my_array[0][0];
+
+            cout<<"Mem address from Function of class: "<<&my_array[0][0]<<" and address:"<<pointer_array<< endl;
+            cout<<"val here: "<<*pointer_array<<endl;
+            // return &my_array[0][0];
+            cout<<"finishhhhhhh"<<endl;
+            cout<<"*******: "<<my_array[0][0]<<endl;
+            return pointer_array;
+        }
+
+        
+};
+
 int main(){
 
     int *ptr;
@@ -65,7 +100,7 @@ int main(){
     cout<<"\nNow Dealing with Dynamic allocation of Memory"<<endl;
     StudentInfo *obj_2 = new StudentInfo("Moin Uddin","Dhaka", 45879);
     obj_2->PrintInfo();
-    
+
     obj_2->color = "RED and Orange";
     obj_2-> efficiency = 0.45;
     obj_2-> power = 100.4578;
@@ -73,6 +108,28 @@ int main(){
     obj_2->PrintInfo_PublicVar();
 
     delete obj_2;
+
+    cout<<"\n\nMaking array using pointer and new variable\n";
+    // StudentArray *obj_3=new StudentArray;
+    StudentArray obj_3;
+    obj_3.row = 3;
+    obj_3.col = 2;
+    // int *array;
+    int *my_array_1 {nullptr};
+    my_array_1= obj_3.MakeArray();
+    cout<<"finish in MAIN\n";
+    cout<<"Address from main function: "<<*my_array_1<<" and val is: "<<my_array_1<<endl;
+    cout<<"value from main: "<<*(my_array_1)<<endl;
+    int p=0;
+    for(int a=0;a<obj_3.row;a++){
+        for(int b=0;b<obj_3.col;b++){
+            cout<<p<<endl;
+        }
+        cout<<endl;
+    }
+
+    // delete obj_3;
+
 
     return 0;
 }
