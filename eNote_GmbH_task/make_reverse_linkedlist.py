@@ -3,9 +3,7 @@ class Node:
   
     # Constructor to initialize the node object 
     def __init__(self, data):
-        # print("from init Node: ", data)
-        self.data = data 
-        # print("self.data: ",self.data)
+        self.data = data
         self.next = None
   
 class LinkedList: 
@@ -57,7 +55,5 @@ def make_list(given_range, llist):
 print("please give the highest limit to make fibonacci series: ")
 limit = int(input())
 llist = make_list(limit, llist)
-print(type(llist))
-  
 print ("Reverse Linked List")
 llist.printList()
