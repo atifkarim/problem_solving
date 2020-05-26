@@ -1,4 +1,9 @@
+/*
+In this code I am trying to lear about polymorphism from Udemy Course
+*/
+
 #include<iostream>
+#include<memory>
 using namespace std;
 
 class Base{
@@ -29,9 +34,16 @@ int main(){
     greetings(b);
     greetings(d);
 
-    Base *ptr = new Derived;
+    // Introducing pointer
+
+    Base *ptr = new Derived();
     ptr -> say_hello();
+
+    // Introducing smart pointer
+    std::unique_ptr<Base> ptr1 = std::make_unique<Derived>();
+    ptr1->say_hello();
+
     delete ptr;
-    
+
     return 0;
 }
