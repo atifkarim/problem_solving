@@ -42,6 +42,7 @@ void do_withdraw(Account &account, double amount){
 }
 
 int main(){
+    cout<<"\nCalling class function with referencing of base class\n";
     Account a;
     Account &ref = a;
     ref.withdraw(1000);
@@ -51,6 +52,17 @@ int main(){
     // t.withdraw(89.90);
     Account &ref_t = t;
     ref_t.withdraw(500);
+
+    cout<<"\nUse referencing operation to call class function by using another class\n\n";
+    Account a1;
+    Savings s1;
+    Checking c1;
+    Trust t1;
+
+    do_withdraw(a1,500);
+    do_withdraw(s1,500);
+    do_withdraw(c1,500);
+    do_withdraw(t1,500);
 
     return 0;
 }
