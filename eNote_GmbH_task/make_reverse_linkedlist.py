@@ -1,4 +1,8 @@
-# Node class  
+# This code stands for having a reverse linked list from a given lits
+# To make the list at first users have to give a positive integer value n where n>2
+# It will create a fibonacci series and this will be the input of reverse linked list
+
+# Node class 
 class Node: 
   
     # Constructor to initialize the node object 
@@ -31,24 +35,23 @@ llist = LinkedList()
 # test code to check the above class
 
 def make_list(given_range, llist):
-    given_list = []
+    given_list = [] # list to contain fibonacci series
     a=0
     b=0
     c=1
     d=0
-
+    # To form a fibonacci series mandatory input is 0,1. So at the beginning these two values are appended
     given_list.append(b)
     given_list.append(c)
-    while (a<(given_range-2)):
+    while (a<(given_range-2)): # As already 2 values are appended so those steps are deducted
         d = b+c
         given_list.append(d)
-        # llist.push(d)
         b=c
         c=d
         a+=1
     
     for i in given_list:
-        llist.push(i)
+        llist.push(i) # calling the function to form reverse linked list
     
     return llist
 
