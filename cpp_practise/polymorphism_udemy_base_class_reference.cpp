@@ -1,3 +1,7 @@
+/*
+This code helps to learn how to use referncing for base class
+*/
+
 #include<iostream>
 using namespace std;
 
