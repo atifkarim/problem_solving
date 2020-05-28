@@ -1,9 +1,13 @@
+/*
+In this code, I have learned how to use base class pointer with virtual keyword / virtual function
+*/
+
 #include<iostream>
 using namespace std;
 
 class Account{
     public:
-        void withdraw(double amount){
+        virtual void withdraw(double amount){
             cout<<"In Withdraw:: Base Class Account"<<endl;
         }
 };
@@ -11,21 +15,21 @@ class Account{
 class Savings:public Account{
 
     public:
-        void withdraw(double amount){
+        virtual void withdraw(double amount){
             cout<<"In Withdraw:: Derived Class Savings"<<endl;
         }
 };
 
 class Checking:public Account{
     public:
-        void withdraw(double amount){
+        virtual void withdraw(double amount){
             cout<<"In Withdraw:: Derived Class Checking"<<endl;
         }
 };
 
 class Trust:public Account{
     public:
-        void withdraw(double amount){
+        virtual void withdraw(double amount){
             cout<<"In Withdraw:: Derived Class Trust"<<endl;
         }
 };
@@ -60,6 +64,8 @@ int main(){
     delete p4;
 
     cout<<"\nPointer calling with static binding\n";
+    cout<<"In class body before funcion return type if I write virtual keyword then behavious will be changed"<<endl;
+    cout<<"So if you want to see the static binding behavious just delete the virtual keyword from the class body\n"<<endl;
     // We have seen from this piece of code the way of creating objets by using pointers
     Account *p1_1 = new Account();
     Account *p2_1 = new Savings();
@@ -76,7 +82,7 @@ int main(){
     delete p2_1;
     delete p3_1;
     delete p4_1;
-
+    
     cout<<"\nNow Base class Pointer is working. We will see the problem\n";
     Account *acc_obj_1;
     Savings sav_obj_1;
