@@ -1,3 +1,7 @@
+/*
+Usage of multiple generic type using template
+*/
+
 #include<iostream>
 #include<string>
 using namespace std;
