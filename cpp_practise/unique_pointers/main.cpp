@@ -24,15 +24,16 @@ class Test{
 };
 
 int main(){
-    Test t2; // No args constructor
+    /*Test t2; // No args constructor
     Test t1 {800}; // Single args constructor
 
 
     // Raw pointer which don't call destructor without using delete t3
     Test *t3 = new Test {900};
-    delete t3;
+    delete t3;*/
 
-    std::unique_ptr<Test> t4{new Test {450}}; // Smart pointer whic don't require delete method to free the heap memory
-
+    std::unique_ptr<Test> t4{new Test {450}}; // Smart pointer(c++11) whic don't require delete method to free the heap memory
+    
+    std::unique_ptr<Test> t5 = std::make_unique<Test> (1400); // c++14 style smart pointer
     return 0;
 }
