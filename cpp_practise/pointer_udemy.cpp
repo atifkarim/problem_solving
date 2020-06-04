@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<string>
 
 using namespace std;
 
@@ -63,6 +64,18 @@ int main(){
         cout<<city<<" "; // You can also give as usual {} braces after for loop
     
     cout<<endl;
+
+    cout<<"size of vec is: "<<city_name.size()<<endl;
+
+    for (int a=0;a<city_name.size();a++){
+        // cout<<(*city_pointer).at(a)<<endl;
+        cin>>(*city_pointer).at(a);
+    }
+    cout<<"Now printing"<<endl;
+    for (int a=0;a<city_name.size();a++){
+        cout<<(*city_pointer).at(a)<<" >> and vector itself val is: "<<city_name[a]<<endl;
+        // cin>>(*city_pointer).at(a);
+    }
 
 
     return 0;
