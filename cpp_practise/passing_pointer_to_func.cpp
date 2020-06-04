@@ -55,9 +55,10 @@ int main(){
     vector <string> vec_name {"Bremen", "Hamburg","Hannover"};
     display(&vec_name);
 
-    cout<<"----------------- DISPLAYING VECTOR -----------------"<<endl;
+    cout<<"----------------- DISPLAYING ARRAY -----------------"<<endl;
 
     int score_array [] {100,90,25,32,-1};
+    cout<<"Arry size i: "<<sizeof score_array/ sizeof score_array[0]<<endl;
     display_array(score_array,-1);
     return 0;
 }
