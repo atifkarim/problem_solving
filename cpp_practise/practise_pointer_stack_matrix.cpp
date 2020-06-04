@@ -21,18 +21,22 @@ class container{
 container getprint_array(int row, int col,container *ptr){
 
 
-	// cout<<"Hello world";
+	cout<<"Function called whose duty is to fill up matrix by taking input from user\n";
     for(int i=0;i<row;i++){
     for(int j=0;j<col;j++){
-        cin>>*((int *)ptr->Matrix + i * col  + j);
-        cin>>*((float *)ptr->Matrix_1 + i * col  + j);
+        
+        cout<<"\nPlease give int type val: ";
+        cin>>*((int *)ptr->Matrix + i * col  + j); // int type val
+        cout<<"\nPlease give float type val: ";
+        cin>>*((float *)ptr->Matrix_1 + i * col  + j); // flat type val
         //cout<<"done";
     }
 }
-
+    cout<<"Now from the function entered values will print\n";
   for (int h=0;h<row*col;h++){
-	cout<<*((int*)ptr->Matrix+h);
-    cout<<*((float*)ptr->Matrix_1+h);
+	
+    cout<<"\nint type val: "<<*((int*)ptr->Matrix+h);
+    cout<<"\nfloat type val: "<<*((float*)ptr->Matrix_1+h);
 }
   return *ptr;
 
@@ -48,11 +52,11 @@ int main()
     container *matrixptr[matrixnumber];
     //arraypointer cpt(2,2);
     for(int x=0;x<matrixnumber;x++){
-    	cout<<"please fill the matrix"<<x<<endl;
+    	cout<<"\nplease fill the matrix number: "<<x<<endl;
     	matrixptr[x]=&matrix[x];
-    	cout<<matrixptr[x];
+    	cout<<"pointer value which is pointed to our matrix: "<<matrixptr[x]<<endl;;
         matrix[x]=getprint_array(2,2,matrixptr[x]);
-        cout<<matrixptr[x];
+        cout<<"\nWhat is this??: "<<matrixptr[x];
     }
 
     cout<<"-----------------------------------------------------------"<<endl;
