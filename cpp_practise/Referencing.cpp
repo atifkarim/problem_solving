@@ -23,7 +23,7 @@ int  main(){
 
     cout<<"\n calling val_ref function and changing the value of x"<<endl;
     int g = val_ref(x);
-    cout<<"Now val of x: "<<x<<" and val of g is: "<<g<<endl<<"\n\n";
+    cout<<"Now val of x: "<<x<<" and val of g is: "<<g<<" and ref is: "<<ref<<endl<<"\n\n";
 
 
     cout<<"Printing vector value by Referencing"<<endl;
