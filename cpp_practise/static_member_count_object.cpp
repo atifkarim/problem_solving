@@ -10,15 +10,19 @@ class count_obj{
     static int todo_obj;
 
     public:
-        count_obj(){todo_obj++;} //constructor
-        ~count_obj(){todo_obj--;} // destructor
+        count_obj(){
+            cout<<"\nconstructor";
+            todo_obj++;} //constructor
+        ~count_obj(){
+            cout<<"\ndestructor";
+            todo_obj--;} // destructor
 
         static void print_obj(){ // importamnt as function is used static type
-            cout <<"total obj is: "<<todo_obj<<endl;
+            cout <<"\ntotal obj is: "<<todo_obj<<endl;
         }
 };
 
-int count_obj :: todo_obj;
+int count_obj :: todo_obj = 0; // It is the rule that static member should be declared inside and outside of the class
 
 int main(){
 
