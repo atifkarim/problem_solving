@@ -69,7 +69,7 @@ bool isPrime(int n)
 
 // Driver Program to test above function 
 int main() 
-{   isPrime(1. ) ? cout << " true\n" : cout << " false\n";
+{   isPrime(1 ) ? cout << " true\n" : cout << " false\n";
 	isPrime(11) ? cout << " true\n" : cout << " false\n"; 
 	isPrime(15) ? cout << " true\n" : cout << " false\n"; 
 	return 0; 
