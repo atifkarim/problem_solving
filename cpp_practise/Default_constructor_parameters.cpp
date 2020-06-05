@@ -24,16 +24,21 @@ class Player{
 Player::Player(string name_val_1, int health_1, int xp_1)
         : name{name_val_1}, health{health_1},xp{xp_1}
         {       
-                cout<<"------------------------------------3 args constructor is called------------------------------------"<<endl;
+                cout<<"------------------------------------Default constructor is called------------------------------------"<<endl;
                 cout<<"Here name: "<<name_val_1<<" ,health: "<<health_1<<" ,xp: "<<xp_1<<endl;
 
         }
 
 int main(){
+    cout<<"\nNo arg constructor is calling\n";
     Player empty;
+    cout<<"\n1 arg constructor is calling\n";
     Player Frank("Atif");
+    cout<<"\n2 arg constructor is calling\n";
     Player hero("Atif",45);
+    cout<<"\n3 arg constructor is calling\n";
     Player villain("Atif",45,-58);
+    cout<<"\nUsing Pointer obj constructor is calling\n";
     Player *enemy = new Player("Enemy", 89, 65);
     delete enemy;
 
