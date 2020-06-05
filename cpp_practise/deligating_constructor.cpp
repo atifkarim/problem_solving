@@ -68,9 +68,9 @@ int main(){
     string get_name_return = obj_player.get_name();
     cout <<"from get_name : "<<get_name_return<<endl;
 
-    Player hero{"hero"};
+    cout<<"\nCalling constructor who has 1 argument\n";
+    Player hero{"hero"}; // Single constructor is calling
     hero.set_name("here HERO");
-    // third constructor will call
 
     cout<<"\ncalling constructor who has 2 arguments"<<endl;
     Player hero_2{"Mohammod", 58};
