@@ -78,7 +78,7 @@ int main(){
     int TOTAL_CELLS_1 = row*col;
     for (int i = 0; i < TOTAL_CELLS_1; i++) {
     // printf("%d ", *(ptr + i));
-    cout<<*(p+i)<<" ";
+    cout<<*(ptr+i)<<" ";
   }
 
     return 0;
