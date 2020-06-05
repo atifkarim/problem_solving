@@ -72,7 +72,7 @@ int main(){
 
     cout<<"\nPrinting public member function pointer_take: \n";
     enemy -> pointer_take("Pointer Enemy");
-
+    delete enemy;
 
     cout << "------------------------------------------------------------------------------"<<endl<<endl;
 
