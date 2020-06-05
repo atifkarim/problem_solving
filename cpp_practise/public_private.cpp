@@ -10,6 +10,8 @@ class Player{
         int health;
         int xp;
     public:
+        Player(string name = "NONE", int health = 0, int xp = 0);
+
         void talk(string name_1){
 
         cout<<"here I am: "<<name_1<<" what is told by: "<<name<<endl;
@@ -21,6 +23,14 @@ class Player{
     }
     bool is_dead();
 };
+
+Player::Player(string name_val_1, int health_1, int xp_1)
+        : name{name_val_1}, health{health_1},xp{xp_1}
+        {       
+                cout<<"------------------------------------3 args constructor is called------------------------------------"<<endl;
+                cout<<"Here name: "<<name_val_1<<" ,health: "<<health_1<<" ,xp: "<<xp_1<<endl;
+
+        }
 
 class Account{
     public:
@@ -35,8 +45,8 @@ class Account{
 
 int main(){
 
-    Player frank;
-    Player hero;
+    Player frank("Atif", 25,50);
+    Player hero("Ashraf", 54,87);
 
     Player players[] {frank, hero}; // players is an array of Player OBJECT or frank and hero objects.
 
@@ -44,16 +54,17 @@ int main(){
     player_vec.push_back(hero);
 
     // string a_1 {"Atif"}
-    frank.name = "My_NAME"; // it is setting the variable value inside of the class from main function
-    frank.talk("Atif"); // it is accessing the function of the class from the main function
-    frank.xp = 12; 
+    // frank.name = "My_NAME"; // it is setting the variable value inside of the class from main function
+    frank.talk("Tanbir"); // it is accessing the function of the class from the main function
+    hero.talk("Alam");
+    // frank.xp = 12; 
 
-
-    Player *enemy = new Player; // OBJECT calling as pointer
+    cout<<"\nPointer obj is using to call the member function";
+    Player *enemy = new Player("Karim",45,21); // OBJECT calling as pointer
     // enemy = new Player;
-    (*enemy).name = "Enemy";
-    (*enemy).health = 500;
-    enemy -> xp = 15;
+    // (*enemy).name = "Enemy";
+    // (*enemy).health = 500;
+    // enemy -> xp = 15;
 
     enemy->pointer_take("Enemy");
 
