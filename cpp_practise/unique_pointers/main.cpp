@@ -35,5 +35,11 @@ int main(){
     std::unique_ptr<Test> t4{new Test {450}}; // Smart pointer(c++11) whic don't require delete method to free the heap memory
     
     std::unique_ptr<Test> t5 = std::make_unique<Test> (1400); // c++14 style smart pointer
+
+    // cannot copy of equal smart pointer
+    std::unique_ptr<Test> t6;
+    t6 = std::move(t4);
+    if (!t4)
+        cout<<"t4 is a null pointer"<<endl;
     return 0;
 }
