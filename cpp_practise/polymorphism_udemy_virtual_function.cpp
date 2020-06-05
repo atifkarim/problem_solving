@@ -7,7 +7,7 @@ using namespace std;
 
 class Account{
     public:
-        virtual void withdraw(double amount){
+         void withdraw(double amount){ // Just delete the virtual keyword, it will show the problem of static binding issue
             cout<<"In Withdraw:: Base Class Account"<<endl;
         }
 };
@@ -83,7 +83,7 @@ int main(){
     delete p3_1;
     delete p4_1;
     
-    cout<<"\nNow Base class Pointer is working. We will see the problem\n";
+    cout<<"\nNow Base class Pointer is working. We will see the problem IF Base class has no virtal function\n";
     Account *acc_obj_1;
     Savings sav_obj_1;
     acc_obj_1 = &sav_obj_1;
