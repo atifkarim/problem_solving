@@ -44,6 +44,7 @@ using namespace std;
 int main ()
 {
   std::string str (100,'x');
+  cout<<str<<endl;
   std::cout << "1. capacity of str: " << str.capacity() << '\n';
   str = "Ich liebe Deutschland und Ich arbeite hier";
   cout<<str<<endl;
