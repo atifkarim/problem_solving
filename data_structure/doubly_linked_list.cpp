@@ -19,6 +19,15 @@ void PrintLinkedList(node *n){
     }
 }
 
+void PrintReverseLinkedList(node *n)
+    {
+        while (n!=NULL)
+        {
+            cout<<n->data<<" ";
+            n = n->prev;
+        }
+    }
+
 int main(){
 
     // creation of 3 pointer to make the linkedlist
@@ -58,6 +67,7 @@ int main(){
 
     PrintLinkedList(head);
     cout<<endl;
+    PrintReverseLinkedList(tail);
 
     return 0;
 }
