@@ -68,9 +68,16 @@ int main(){
 
     n -> next =  NULL; // This is telling to stop the creation of new node
 
+    
+
 
 
     PrintLinkedList(h);
+
+    // Not sure about the following lines. Hope it is correct
+    delete n;
+    delete h;
+    delete t;
 
 
 
