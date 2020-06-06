@@ -66,7 +66,7 @@ int main(){
 
     // This line t->next = n is very imp because without it the linking between different node will not be established
 
-    n -> next =  NULL;
+    n -> next =  NULL; // This is telling to stop the creation of new node
 
 
 
