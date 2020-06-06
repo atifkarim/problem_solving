@@ -29,6 +29,10 @@ int factorial_1(int s){
     return s*factorial_1(s-1);
 }
 
+int factorial_ternary(int a){
+    return (a==0 || a==1)?1:a*factorial_ternary(a-1);
+}
+
 int main(){
     long long int x;
     cout<<"Give your desired value to get factorial, please use greater than zero value: ";
@@ -37,5 +41,7 @@ int main(){
     // In the following line just choose which function you want to use. Rewrite/Update plz
     long long int result = factorial(x);
     cout<<"result is: "<<result<<endl;
+
+    cout<<"Using factorial_ternary function for "<<x<<" result of factorial is: "<<factorial_ternary(x)<<endl;
     return 0;
 }
