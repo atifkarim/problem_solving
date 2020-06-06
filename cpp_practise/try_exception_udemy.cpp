@@ -13,7 +13,7 @@ int main(){
     cout<<"How much oil do you need in Litre? : ";cin>>litre;
 
     cout<<"result km/litre is: "<< static_cast<double>(km)/litre<<endl; // Here if we omit static_cast<double>
-                                                                        // Then it will make error
+                                                                        // Then it will make error as both arg is int
 
     // But the thing is we can also run the code flawlessly by using try and catch
     
