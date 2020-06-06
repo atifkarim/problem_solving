@@ -7,7 +7,7 @@ using namespace std;
 
 class Account{
     public:
-         void withdraw(double amount){ // Just delete the virtual keyword, it will show the problem of static binding issue
+         virtual void withdraw(double amount){ // Just delete the virtual keyword, it will show the problem of static binding issue
             cout<<"In Withdraw:: Base Class Account"<<endl;
         }
 };
