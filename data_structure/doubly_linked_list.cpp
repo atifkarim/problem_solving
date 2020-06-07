@@ -13,7 +13,7 @@ class node{
         node * prev;
 };
 
-void PrintLinkedList(node *n){
+void PrintForwardLinkedList(node *n){
     while(n!= NULL){
         cout<<n->data<<" ";
         n = n->next;
@@ -66,7 +66,7 @@ int main(){
 
     n->next = NULL;
 
-    PrintLinkedList(head);
+    PrintForwardLinkedList(head);
     cout<<endl;
     PrintReverseLinkedList(tail);
 
