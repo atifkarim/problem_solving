@@ -1,6 +1,7 @@
 /*
 Learn how to create doubly linked list
 source: https://www.youtube.com/watch?v=YJRRpXYldVQ
+https://www.youtube.com/watch?v=5s0x8bc9DvQ
 */
 #include <iostream>
 using namespace std;
