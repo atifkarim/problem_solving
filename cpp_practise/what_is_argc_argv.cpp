@@ -15,5 +15,11 @@ int main(int argc, char *argv[]){
     // then it will print 4
     // ./main itself an argument so it prints 1 at the first time.
     cout<<"argc is here %d\n"<<argc<<endl;
+
+    cout<<"\nNow Printing the content of argv\n";
+    int i;
+    for (i =0; i<argc;++i){
+        cout<<"value of argv --- "<<i<<" is: "<<argv[i]<<endl;
+    }
     return 0;
 }
