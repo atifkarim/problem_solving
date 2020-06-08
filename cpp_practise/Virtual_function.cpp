@@ -34,6 +34,10 @@ int main() {
     then we have to chose LATE BINDING. Then just add "virtual" keyword before the function of
     Base Class(Here it is A)*/
 
+    /*How to print function of class A*/
+    A *ptr = new A();
+    ptr->Display();
+
 
     return 0;
     }
