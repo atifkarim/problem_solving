@@ -12,7 +12,7 @@ using namespace std;
 
 class A {
     public:
-        void Display(){
+        virtual void Display(){
             cout<<"I am from class A\n";
         }
 };
