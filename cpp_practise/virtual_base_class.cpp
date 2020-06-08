@@ -19,14 +19,14 @@ class A{
         }
 };
 
-class B:public A{
+class B:virtual public A{
     public:
         void PrintB(){
             cout<<"I am the Class B who is child of class A and i know that value of i in A is: "<<i<<endl;
         }
 };
 
-class C:public A{
+class C:virtual public A{
     public:
         void PrintC(){
             cout<<"I am Class C who is the child of class A and i know that value of i in A is: "<<i<<endl;
@@ -51,6 +51,7 @@ int main(){
 
     cout<<"\nNow the part of class D\n";
     D obj_d;
+    obj_d.i = 90;
     obj_d.PrintD();
     
     return 0;
