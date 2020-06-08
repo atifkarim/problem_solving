@@ -18,8 +18,12 @@ int main(int argc, char *argv[]){
 
     cout<<"\nNow Printing the content of argv\n";
     int i;
-    for (i =0; i<argc;++i){
-        cout<<"value of argv --- "<<i<<" is: "<<argv[i]<<endl;
+    int sum = 0;
+    for (i =1; i<argc;++i) // No need to start from i=0 as the first argv is always the name of the executable file itself
+    {
+        cout<<"value of argv --- "<<i<<" is: "<<argv[i]<<endl; // here this argv is a string
+        sum = sum+atoi(argv[i]); // to run this type in the terminal --> ./executable_file_name 2 3 4 5 // sum will be 14
     }
+    cout<<"the sum is: "<<sum<<endl;
     return 0;
 }
