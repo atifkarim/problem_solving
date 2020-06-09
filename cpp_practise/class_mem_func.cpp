@@ -10,11 +10,11 @@ class calculation{
 
 public:
     int a,b;
-    void add(int a, int b); // function definition
+    void add(int a, int b); // function declaration
 
 };
 
-void calculation:: add(int a, int b){
+void calculation:: add(int a, int b){ // function definition
 
     cout<<"In function: "<<a+b<<endl;
 }
