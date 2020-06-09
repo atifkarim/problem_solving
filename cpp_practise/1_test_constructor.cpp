@@ -22,7 +22,9 @@ int Math::Sum(){
 
 int main(){
     int q,p;
-    cin>>q; cin>>p;
+    cout<<"Give value for q: ";
+    cin>>q;
+    cout<<"Give value for q: ";cin>>p;
     Math obj(q,p);
     int res = obj.Sum();
     cout<<"\nthe res is: "<<res<<endl;
