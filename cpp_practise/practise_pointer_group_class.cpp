@@ -1,3 +1,7 @@
+/*
+This code return a pointer after creating a 2D matrix
+*/
+
 #include<iostream>
 using namespace std;
 
