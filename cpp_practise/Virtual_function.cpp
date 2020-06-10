@@ -44,7 +44,7 @@ int main() {
     d.Display(); // Will show the content of class B , as both function name in base and derived class
     // are same then problem will occur which one will display. But compiler automatically chose class B
     d.A::Display(); // to print class A's content chose this method. It is something related to 
-    // same_function_name_in_both_class.cpp which will be found in this report
+    // same_function_name_in_both_class.cpp which will be found in this repository
 
 
     return 0;
