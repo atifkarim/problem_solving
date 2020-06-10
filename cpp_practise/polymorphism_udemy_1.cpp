@@ -37,11 +37,13 @@ int main(){
     // Introducing pointer
 
     Base *ptr = new Derived();
-    ptr -> say_hello();
+    ptr -> say_hello(); // Here you will see that it is printing the base class, not the derived class
 
     // Introducing smart pointer
     std::unique_ptr<Base> ptr1 = std::make_unique<Derived>();
-    ptr1->say_hello();
+    ptr1->say_hello(); // same case will be here also. It is for Early Binding concept.
+    // If we use 'virtual' keyword in front of the return type of base class function then this problem will be solved
+    // An example is available at Virtual_function.cpp code
 
     delete ptr;
 
