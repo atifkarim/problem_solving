@@ -146,6 +146,7 @@ int main(){
     append(&h, 6);
     push(&h, 87);
     insertAfter(h->next, 8);
+    insertAfter(h->next->next, 56);
     // n -> next =  NULL;
 
 
