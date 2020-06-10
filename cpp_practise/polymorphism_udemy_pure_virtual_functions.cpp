@@ -95,6 +95,8 @@ int main(){
     std::vector<Shape *> shapes {s1, s2, s3};
     // for (auto p:shapes)
     //     p->draw();
+    cout<<"\nCalling screen refresh function\n";
+    screen_refresh(shapes);
 
 
 
