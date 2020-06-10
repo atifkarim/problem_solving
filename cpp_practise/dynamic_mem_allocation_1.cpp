@@ -61,8 +61,14 @@ class StudentArray{
                 }
                 cout<<endl;
             }
+            /*
             int *pointer_array {nullptr};
             pointer_array = &my_array[0][0];
+            */
+
+            //changed when I am in the train
+
+            int *pointer_array{*my_array};
 
             cout<<"Mem address from Function of class: "<<&my_array[0][0]<<" and address:"<<pointer_array<< endl;
             cout<<"val here: "<<*pointer_array<<endl;
