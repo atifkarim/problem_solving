@@ -1,0 +1,2 @@
+# to delete all executable file of cpp ust use the following link. it will not affect the folder or any file wich has extension
+ls | grep -v "\." | xargs rm
