@@ -31,7 +31,7 @@ void String::change(const char *str)
 } 
 
 String::String(const String& old_str) 
-{ 
+{ 	cout<<"I am now at copy constructor function\n";
 	size = old_str.size; 
 	s = new char[size+1]; 
 	strcpy(s, old_str.s); 
@@ -39,7 +39,8 @@ String::String(const String& old_str)
 
 int main() 
 { 
-	String str1("GeeksQuiz"); 
+	String str1("GeeksQuiz");
+	cout<<"Are you calling copy constructor\n"; 
 	String str2 = str1; 
 
 	str1.print(); // what is printed ? 
