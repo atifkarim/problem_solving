@@ -26,37 +26,47 @@ Example:
 
 using namespace std;
 using namespace std::chrono;
-
+// unsigned long long
 typedef unsigned long long ull;
 
-ull OddSum = 0;
-ull EvenSum = 0;
-
-void findEven(ull start, ull end){
+void findEven(ull &EvenSum_1, ull start, ull end){
     for (ull i = start; i<=end; i++){
         if((i%2)==0){
-            EvenSum +=i;
+            EvenSum_1 +=i;
         }
     }
 }
 
-void findOdd(ull start, ull end){
+void findOdd(ull &OddSum_1, ull start, ull end){
     for (ull i = start; i<=end; i++){
         if((i%2)==1){
-            OddSum +=i;
+            OddSum_1 +=i;
         }
     }
 }
 
 int main(){
 
+    ull OddSum = 0;
+    ull EvenSum = 0;
+
+    // ull & OddSum = OddSum_1;
+    // ull & EvenSum = EvenSum_1;
+
+
     ull start = 1;
     ull end = 1900000000;
 
     auto startTime = high_resolution_clock::now();
+/*
+    std::thread t1(findEven, OddSum, start, end);
+    std::thread t2(findOdd, EvenSum, start, end);
 
-    findEven(start, end);
-    findOdd(start, end);
+    t1.join();
+    t2.join();
+*/
+    findEven(EvenSum, start, end);
+    findOdd(OddSum, start, end);
 
     auto stopTime = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stopTime - startTime);
