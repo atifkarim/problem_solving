@@ -61,7 +61,7 @@ int main(){
 
 
 /******************************************Functor******************************************/
-
+/*
 class Base{
     public:
         void operator ()(int x){ // keep the name operator. function object
@@ -73,6 +73,27 @@ class Base{
 
 int main(){
     std::thread t ( (Base()), 10);
+    t.join();
+    return 0;
+}
+*/
+
+/******************************************Non Static Member Function******************************************/
+
+class Base{
+    public:
+        void run(int x){
+            while (x-->0){
+                cout<<"the val is: "<<x<<endl;
+            }
+
+        }
+};
+
+int main(){
+
+    Base b;
+    std::thread t (&Base::run, &b, 10);
     t.join();
     return 0;
 }
