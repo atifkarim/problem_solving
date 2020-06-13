@@ -31,7 +31,7 @@ int main(){
 /******************************************Lambda Function******************************************/
 
 int main(){
-
+/*
     auto fun = [](int x){ 
 
         while(x-->0){
@@ -40,16 +40,17 @@ int main(){
     };
 
     std::thread t (fun, 10);
+    */
 
     // now just comment the lambda function to threading and uncomment the following lines to inject lambda
     // directly at thread creation time
 
-    // std::thread t ([](int x){ 
+    std::thread t ([](int x){ 
 
-    //     while(x-->0){
-    //         cout<<"the val is: "<<x<<endl;
-    //     }
-    // }, 10);
+        while(x-->0){
+            cout<<"the val is: "<<x<<endl;
+        }
+    }, 10);
     t.join();
 
     return 0;
