@@ -9,7 +9,9 @@ There are diffrent ways of making threading in cpp
 using namespace std;
 
 
-/*Function pointer*/
+/******************************************Function Pointer******************************************/
+
+/*
 void fun(int x){
     while(x-->0){
         cout<<"val of x is: "<<x<<endl;
@@ -22,4 +24,23 @@ int main(){
     t.join();
     return 0;
 
+}
+
+*/
+
+/******************************************Lambda Function******************************************/
+
+int main(){
+
+    auto fun = [](int x){ 
+
+        while(x-->0){
+            cout<<"the val is: "<<x<<endl;
+        }
+    };
+
+    std::thread t (fun, 10);
+    t.join();
+
+    return 0;
 }
