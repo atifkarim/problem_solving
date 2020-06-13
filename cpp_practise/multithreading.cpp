@@ -72,7 +72,7 @@ int main(){
     ull EvenSum = 0;
 
     ull start = 1;
-    ull end = 1900000000000;
+    ull end = 19000000000;
 
     auto startTime = high_resolution_clock::now();
 
