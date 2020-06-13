@@ -27,7 +27,7 @@ std::mutex m;
 void add_val(){
     // We cannot say which thread will come at first
     m.lock();
-    ++myAmmount;
+    ++myAmmount; // critical section
     m.unlock();
 }
 
