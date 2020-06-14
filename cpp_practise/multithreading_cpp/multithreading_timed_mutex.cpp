@@ -15,7 +15,7 @@ std::timed_mutex m;
 
 
 /*try lock for*/
-void increment (int i){
+void increment_try_lock_for (int i){
     if (m.try_lock_for(std::chrono::seconds(2))){
         ++myAmount;
         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -30,8 +30,8 @@ void increment (int i){
 
 int main(){
 
-    std::thread t1(increment,1);
-    std::thread t2(increment,2);
+    std::thread t1(increment_try_lock_for,1);
+    std::thread t2(increment_try_lock_for,2);
 
     t1.join();
     t2.join();
