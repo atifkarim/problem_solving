@@ -36,10 +36,27 @@ int main(){
     int q = 20;
 
     auto add_1 = [p,q](int a , int b) {
+        // One thing is that it is not possible to change the value of p and q from here
+        // as they are passed by value
+        // p = 90; q = 82; // It will throw error
+        // to resolve this next function(pass then by reference)
         return a + b + p + q;
     };
 
     cout<<"Result of add_1 function is: "<<add_1(200,10)<<endl;
+
+    // pass local variable to the lambda function by reference.
+
+    int s = 5;
+    int t = 10;
+    auto add_2 = [&s, &t](int a , int b){ // In the capture list [] if just write & , then also possible
+        s = 10;
+        t = 15;
+        return a+b+s+t;
+    };
+
+    cout<<"Result of add_2 is: "<<add_2(20,10)<<endl;
+    cout<<"Here the val of s: "<<s<<", and t: "<<t<<endl;
 
 
 }
