@@ -10,6 +10,10 @@ source : https://www.youtube.com/watch?v=uk0Ytomv0wY&t=673s
 
 using namespace std;
 
+void PerformOperation(std::function<void()> f){
+        f();
+    }
+
 int main(){
 
     // A simplest lambda function which no param,no arguments, just print a message
@@ -67,6 +71,31 @@ int main(){
     // Another is
     // auto add = [&, g](int a , int b) // All local variable will be passed by ref except g. It(g) could not be changed
 
+    // An example by using vector
 
+    std::vector <int> arr = {1,2,3,4,5};
+    double total = 0;
+
+    // include algorithm for_each
+    std::for_each(begin(arr), end(arr),
+    
+    [&](int x){
+        total += x;
+    }
+    );
+
+    cout<<"Sum of the vector arr is: "<<total<<endl;
+
+    // Example iof using functional, look outside of main function named PerformOperation function
+
+    int a_1 = 100;
+    auto funk = [&]() {
+        a_1++;
+    };
+
+    PerformOperation(funk);
+    cout<<"Value of a_1 is: "<<a_1<<endl;
+
+    
 
 }
