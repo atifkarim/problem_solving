@@ -59,5 +59,14 @@ int main(){
     cout<<"Result of add_2 is: "<<add_2(20,10)<<endl;
     cout<<"Here the val of s: "<<s<<", and t: "<<t<<endl;
 
+    // Some style of lambda
+    // Suppose two int g,h;
+    // auto add = [=, &g](int a , int b){ // it means all value will be passed by value except g, it could be changed
+        // calculation
+    //};
+    // Another is
+    // auto add = [&, g](int a , int b) // All local variable will be passed by ref except g. It(g) could not be changed
+
+
 
 }
