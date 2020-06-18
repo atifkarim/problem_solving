@@ -21,6 +21,7 @@ int main(){
 
 
     // Now giving parameter to lambda and return a value
+    // auto add = [&](int a , int b) ->int { // both the lines are correct. but no need to say int here, easy to detect
     auto add = [&](int a , int b) {
         return a + b;
     };
