@@ -18,4 +18,14 @@ int main(){
     };
 
     showMessage();
+
+
+    // Now giving parameter to lambda and return a value
+    auto add = [&](int a , int b) {
+        return a + b;
+    };
+
+    cout<<"Result of add function is: "<<add(200,15)<<endl;
+
+
 }
