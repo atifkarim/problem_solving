@@ -35,7 +35,8 @@ int main(){
     int p = 10;
     int q = 20;
 
-    auto add_1 = [p,q](int a , int b) {
+    auto add_1 = [p,q](int a , int b) { // Here in the capture list if put only " = " sign, then also possible
+                                        // to do the same operation. 
         // One thing is that it is not possible to change the value of p and q from here
         // as they are passed by value
         // p = 90; q = 82; // It will throw error
