@@ -24,7 +24,7 @@ int main(){
         };
 
         // Also possible to entry data as like as follows
-        coffee["cold_drinks"] = 43;
+        coffee["Cold_drinks"] = 43; // manually adding
         char c;
         string name; int price;
         do{  
@@ -32,7 +32,7 @@ int main(){
                 cin >>name;
                 cout<<"Price is: ";
                 cin>>price;
-                coffee.insert(make_pair(name,price));
+                coffee.insert(make_pair(name,price)); // insert function used
                 cin>>c;
         }while(c!='y');
 
@@ -41,9 +41,17 @@ int main(){
         // printing map
 
         map <string, int> :: iterator it = coffee.begin();
-        for(it; it != coffee.end(); ++it){
+        for(it = coffee.begin(); it != coffee.end(); ++it){
             cout<<it->first<<" : "<<it->second<<endl;
         }
+
+        // Erasing value from map can be done by using iterator OR key
+        // coffee.erase(it) // it is pointing to the begin index, so it will delete the begin
+        // keep this in mind item will be deleted which is sorted by map
+        // for example here Cold_drinks will be deleted
+        // If any string which can be sorted before Cold_drinks then scenario will be different
+
+        // another way-- coffee.erase("Tea");
 
         return 0;
 }
