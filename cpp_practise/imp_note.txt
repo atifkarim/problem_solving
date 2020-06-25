@@ -3,3 +3,6 @@ ls | grep -v "\." | xargs rm
 
 # to run threading code
 g++ -std=c++11 -pthread file_name.cpp -o output_file
+
+# to make Cmake file for threading code
+https://stackoverflow.com/questions/30734136/cmake-linking-error-pthread-enable-multithreading-to-use-stdthread-operation
