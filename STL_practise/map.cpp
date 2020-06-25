@@ -27,6 +27,11 @@ int main(){
         coffee["Cold_drinks"] = 43; // manually adding
         char c;
         string name; int price;
+        cout<<"----------------------------------------------------------\n";
+        cout<<"\nPut Product name in String\nAnd Price in Integer value\n";
+        cout<<"Everytime to put new pair of data please press any key EXCEPT Y\n";
+        cout<<"To terminate adding data please Press Y\n";
+        cout<<"----------------------------------------------------------\n";
         do{  
                 cout<<"Product name is: ";
                 cin >>name;
@@ -41,7 +46,8 @@ int main(){
         // printing map
 
         map <string, int> :: iterator it = coffee.begin();
-        for(it = coffee.begin(); it != coffee.end(); ++it){
+        for(it = coffee.begin(); it != coffee.end(); ++it){ 
+            // instead of it = coffee.begin() we can write only it. But be concern if you delete anything from the begin
             cout<<it->first<<" : "<<it->second<<endl;
         }
 
@@ -53,5 +59,21 @@ int main(){
 
         // another way-- coffee.erase("Tea");
 
+        cout<<"\nNow the concept of Multimap will come\n";
+        // it allows duplicate key
+
+        multimap <string, int> my_name;
+        my_name.insert(make_pair("MD", 2));
+        my_name.insert(make_pair("Atif", 4));
+        my_name.insert(make_pair("MD", 2));
+
+        // following two lines are correct for declaring iterator
+        // multimap <string, int> :: iterator it_1 = my_name.begin();
+        auto it_1 = my_name.begin();
+
+        for(it_1 = my_name.begin(); it_1 != my_name.end(); it_1++)
+        {
+            cout<<it_1->first<<" : "<<it_1->second<<endl;
+        }
         return 0;
 }
