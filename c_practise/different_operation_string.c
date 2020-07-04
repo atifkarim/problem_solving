@@ -44,6 +44,25 @@ char *my_strcat(char *new_char, char *old_char){
 
 }
 
+int my_strcmp(char *strg1, char *strg2)
+{
+    while( ( *strg1 != '\0' && *strg2 != '\0' ) && *strg1 == *strg2 )
+    {
+        strg1++;
+        strg2++;
+    }
+ 
+    if(*strg1 == *strg2)
+    {
+        return 0; // strings are identical
+    }
+ 
+    else
+    {
+        return *strg1 - *strg2;
+    }
+}
+
 int main(){
     char name[] = "Atif Bin";
     char name_dest[20];
@@ -77,5 +96,33 @@ int main(){
     printf("\nConcatening with default lib, result is %s\n", char_1);
     char *my_concat_ret = my_strcat(" World_BD", char_1);
     printf("Concatening with manual lib, result is %s\n", char_1);
+
+    // comparison of strings
+    printf("\n\n!!!!!!!!!!!!!!!!!!!!!! Comparison of Strings Operation is started !!!!!!!!!!!!!!!!!!!!!!\n");
+    char data_1[] = "Atif";
+    char data_2[] = "AtiF";
+    int comparator_val;
+    printf("\nComparison is doing with default lib");
+    comparator_val = strcmp(data_1, data_2);
+    if (comparator_val == 0){
+        printf("\nVal of comparator val is %d so data_1 and data_2 are same string", comparator_val);
+    }
+    else
+    {
+        printf("\nVal of comparator val is %d so They are not same string", comparator_val);
+    }
+
+    int function_comparator = my_strcmp(data_1, data_2);
+    printf("\nComparison is doing with manual lib");
+    if (function_comparator == 0){
+        printf("\nVal of function_comparator is %d so data_1 and data_2 are same string",function_comparator);
+    }
+    else
+    {
+        printf("\nVal of function_comparator is %d so They are not same string", function_comparator);
+    }
+
+
+    printf("\n");
     return 0;
 }
