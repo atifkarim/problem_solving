@@ -1,4 +1,9 @@
+'''
+https://www.learnpython.org/en/Classes_and_Objects
+'''
+
 class MyClass:
+    "This is a class name MyClass"
     variable = "blah"
 
     def function(self):
@@ -9,6 +14,10 @@ class MyClass:
 # myobjectx.function()
 
 # print(myobjectx.variable)
+print("Accessing value direct with class: ", MyClass.variable)
+print(MyClass.__doc__) # look at the first line of MyClass
+print("Checking the class name: ",MyClass.__name__) # class name
+print("Checking the response of fuction directly with the class:", MyClass.function) # fucntion address
 
 myobjectx = MyClass()
 myobjecty = MyClass()
@@ -18,6 +27,7 @@ myobjecty.variable = "yackity"
 # Then print out both values
 print(myobjectx.variable)
 print(myobjecty.variable)
+print("Now printing function with objectx:\n",myobjectx.function())
 
 # define the Vehicle class
 class Vehicle:
