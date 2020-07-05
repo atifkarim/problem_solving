@@ -1,5 +1,5 @@
 /*
-a function from a class is calling from another function
+a function from a class is calling from another function of another class
 */
 
 #include<iostream>
