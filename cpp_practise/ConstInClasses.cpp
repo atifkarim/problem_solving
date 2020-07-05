@@ -38,7 +38,7 @@ class Player{
         Player::Player(string name_val)
         : Player{name_val,0,0}
         {   
-            cout<<"------------------------------------2 args constructor is called------------------------------------"<<endl;
+            cout<<"------------------------------------1 args constructor is called------------------------------------"<<endl;
             cout<<"string constructor is called where name is: "<<name<<endl;
         }
 
