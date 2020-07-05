@@ -10,7 +10,7 @@ class do_add{
 
 public:
     int a,b;
-    void add(int a, int b); // function definition
+    void add(int a, int b); // function declaration
 
 };
 
@@ -19,12 +19,12 @@ class do_all{
 
 public:
     int c,d;
-    void mul(int c, int d); // function definition
+    void mul(int c, int d); // function declaration
 
 };
 
 
-void do_add:: add(int a, int b){
+void do_add:: add(int a, int b){ // function definition
 
     cout<<"I am the function from class do_add and I am doing a+b: "<<a+b<<endl;
 }
