@@ -47,7 +47,7 @@ int main(){
     cout<<"\nPrinting member variable with Pointer: \n";
     Player *enemy = new Player;
     enemy ->name = "Pointer Atif";
-    enemy ->health = 34;
+    (*enemy).health = 34;
     enemy -> xp=89;
     enemy -> Print();
 
