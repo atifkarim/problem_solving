@@ -54,10 +54,11 @@ int main(){
 
     Trust t;
     // t.withdraw(89.90);
-    Account &ref_t = t;
+    Account &ref_t = t; // Here, using reference of Base Class another Derived Class is calling  
     ref_t.withdraw(500);
 
-    cout<<"\nUse referencing operation to call class function by using another class\n\n";
+    cout<<"\nBase Class is using to call Derived Class by using Reference operation where as driver\n";
+    cout<<"a function named do_withdraw is used\n\n";
     Account a1;
     Savings s1;
     Checking c1;
@@ -67,6 +68,9 @@ int main(){
     do_withdraw(s1,500);
     do_withdraw(c1,500);
     do_withdraw(t1,500);
+
+    // You will see that here each time Base destructor will be called while a Derived class's
+    // destructor is called
 
     return 0;
 }
