@@ -1,5 +1,5 @@
 /*
-Some incerement and decre,ent operator will be also try to introduce here
+Some incerement and decrement operator will be also try to introduce here
 */
 
 #include <iostream>
@@ -8,7 +8,7 @@ using namespace std;
 int main(){
 
     int x{10};
-    while(x-->0){ // chnage between x-- and --x
+    while(--x>0){ // change between x-- and --x
         cout<<"val is now: "<<x<<endl;
     }
 
@@ -33,10 +33,9 @@ int main(){
     cout<<"pointer p is pointing to the value: "<<*p<<endl;
     // now check with ++*p, *p++, *++p
     // ++*p;
-    *++p;
+    *p++;
     cout<<"val of arr[0]: "<<arr[0]<<" ,and arr[1]: "<<arr[1]<<endl;
-    cout<<"now: "<<*p<<endl;
-
+    cout<<"After doing: "<<*p<<endl;
 
     return 0;
 }
