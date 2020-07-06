@@ -1,5 +1,7 @@
 /*
 This code helps to learn about Pure Virtual Function and Abstract Class
+The function which has at least one pure virtual function it is called Abstract Class
+This class cannot instantiate object but it can create pointer type object
 */
 
 #include <iostream>
@@ -87,7 +89,7 @@ int main(){
 
     delete ptr;
    */
-
+  
     Shape *s1 = new Line();
     Shape *s2 = new Circle();
     Shape *s3 = new Square();
