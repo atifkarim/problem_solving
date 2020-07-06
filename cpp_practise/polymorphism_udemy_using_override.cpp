@@ -60,7 +60,7 @@ int main(){
     cout<<"\nPrinting the function\n\n";
     p1_1-> withdraw(56.98);
     p2_1-> withdraw(56.98);
-    sptr->withdraw(125.54);
+    sptr-> withdraw(125.54);
     /*
     p3_1-> withdraw(56.98);
     p4_1-> withdraw(56.98);
@@ -70,6 +70,7 @@ int main(){
     cout<<"\nClean the Memory\n\n";
     delete p1_1;
     delete p2_1;
+    delete sptr;
     /*
     delete p3_1;
     delete p4_1;
