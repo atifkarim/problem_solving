@@ -59,7 +59,12 @@ int main(){
     hero.set_name("here HERO");
     // third constructor will call
     string name_3; int health_3; int xp_3;
-    cin>>name_3; cin>>health_3; cin>>xp_3;
+    cout<<"Give name_3: ";
+    cin>>name_3; 
+    cout<<"Give value health_3: ";
+    cin>>health_3;
+    cout<<"Give xp_3: ";
+    cin>>xp_3;
     Player third_constructor{name_3, health_3, xp_3};
     
 

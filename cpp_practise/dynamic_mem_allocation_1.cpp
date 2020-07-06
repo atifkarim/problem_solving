@@ -46,11 +46,12 @@ class StudentArray{
         int col;
         int *MakeArray()
         {
-            cout<<"HIIIIIIIIIIIIIIIIIII"<<endl;
+            cout<<"Please give value for the array whose row: "<<row<<" and col: "<<col<<endl;
             int my_array[row][col];
             for(int i=0;i<row;i++)
             {
                 for(int j=0;j<col;j++){
+                    cout<<"my_array["<<i<<"]["<<j<<"]: ";
                     cin>>my_array[i][j];
                 }   
             }

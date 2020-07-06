@@ -15,7 +15,7 @@ const T& f(double d){
 //   double e = 2 * d;
 //   return e;                      // Compiler warning:
                                  // returning reference to temporary
-d = 9.5;
+// d = 9.5;
 return d;
 }
 
