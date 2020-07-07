@@ -27,9 +27,12 @@ std::mutex m;
 
 void add_val(int &myAmmount){ // delete this argument to use global variable myAmmount
     // We cannot say which thread will come at first
+    for(int i =0; i<10;i++){
     m.lock();
     ++myAmmount; // critical section
     m.unlock();
+    }
+    // you can also omit this for loop. Look, here ans is 20, but in next code(try_lock) you will see a difference
 }
 
 int main(){
