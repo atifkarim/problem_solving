@@ -15,13 +15,15 @@ int X=0; int Y=0;
 
 void DoSomeWorkForSeconds(int seconds){std::this_thread::sleep_for(std::chrono::seconds(seconds));}
 
-void incrementXY(int &XorY, std::mutex &m, const char* dsec){
+void incrementXY(int &XorY, std::mutex &m, const char* dsec, int a){
     for(int i =0;i<5;i++){
+        std::thread::id this_id = std::this_thread::get_id();
         m.lock();
+            cout<<"thread is: "<<this_id<<" , and I am giving here thread num: "<<a<<endl;
             ++XorY;
-        cout<<dsec << XorY<<endl;
+        cout<<dsec <<" : "<< XorY<<endl;
         m.unlock();
-        DoSomeWorkForSeconds(1);
+        DoSomeWorkForSeconds(2);
     }
 }
 
@@ -47,8 +49,8 @@ void ConsumeXY(){
 
 int main(){
 
-    std::thread t1(incrementXY, std::ref(X), std::ref(m1), "X");
-    std::thread t2(incrementXY, std::ref(Y), std::ref(m2), "Y");
+    std::thread t1(incrementXY, std::ref(X), std::ref(m1), "X", 1);
+    std::thread t2(incrementXY, std::ref(Y), std::ref(m2), "Y", 2);
     std::thread t3(ConsumeXY);
 
     t1.join();
