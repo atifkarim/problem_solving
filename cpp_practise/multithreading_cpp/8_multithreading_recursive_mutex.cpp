@@ -18,15 +18,16 @@ void recursion(char c, int loopFor){
     if(loopFor<0)
         return;
     m.lock();
-    cout<<c<<" "<<buffer++<<endl;
+    cout<<"locked by thread ID: "<<c<<" while buffer val is: "<<buffer++<<endl;
     recursion(c, --loopFor);
     m.unlock();
+    cout<<"unlock by thread ID: "<<c<<endl;
 }
 
 int main(){
 
-    std::thread t1(recursion, '0', 10);
-    std::thread t2(recursion, '1', 10);
+    std::thread t1(recursion, '1', 10);
+    std::thread t2(recursion, '2', 10);
 
     t1.join();
     t2.join();
