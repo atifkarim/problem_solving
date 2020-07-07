@@ -8,6 +8,7 @@ using namespace std;
 class BaseClass1{
     int PrivateA;
     public:
+        int base_a;
         int GetValue(){
             cout<<"Please Assign a value"<<endl;
             cin>>PrivateA;
@@ -36,6 +37,7 @@ int main(){
 
     DerivedClass1 obj_2;
     obj_2.printvalueB();
+    // obj_2.base_a = 90;
     // int t = obj_2.GetValue(); // It will be error as the class is derived as a private acess specifier
 
     return 0;
