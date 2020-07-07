@@ -12,7 +12,8 @@ source :https://www.youtube.com/watch?v=eZ8yKZo-PGw&list=PLk6CEY9XxSIAeK-EAh3hB4
 
 using namespace std;
 
-int myAmmount = 0;
+// int myAmmount = 0; // Uncomment this and also take necessary steps in the following lines(delete argument and
+                        // local variable myAmmount to use global variable myAmmount)
 std::mutex m;
 
 // void add_val(){
@@ -24,7 +25,7 @@ std::mutex m;
 // it is not good. so we have to use lock and unlock to introduce mutex here. I am commenting the
 // previous function and re-writing it as a new 
 
-void add_val(){
+void add_val(int &myAmmount){ // delete this argument to use global variable myAmmount
     // We cannot say which thread will come at first
     m.lock();
     ++myAmmount; // critical section
@@ -32,9 +33,10 @@ void add_val(){
 }
 
 int main(){
+    int myAmmount = 0; // just uncomment this part to use gloabal variable myAmmount
 
-    std::thread t1 (add_val);
-    std::thread t2 (add_val);
+    std::thread t1 (add_val, std::ref(myAmmount)); // just delete std::ref part to use gloabal variable myAmmount
+    std::thread t2 (add_val, std::ref(myAmmount)); // just delete std::ref part to use gloabal variable myAmmount
 
     t1.join();
     t2.join();
