@@ -1,7 +1,7 @@
 /*
 To get return value it can be used
 std::async -- tell to create new thread
-std::deferred -- tell not reate thread, just take entry to the function (slow process than async process)
+std::deferred -- tell not create thread, just take entry to the function (slow process than async process)
 source : https://www.youtube.com/watch?v=eTMY5zXits8&list=PLk6CEY9XxSIAeK-EAh3hB4fgNvYkYmghp&index=16
 */
 

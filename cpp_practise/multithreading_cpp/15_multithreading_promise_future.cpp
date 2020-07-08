@@ -1,5 +1,5 @@
 /*
-If want to get any value from the threading to mai function then use std::promise and std::future
+If want to get any value from the threading to main function then use std::promise and std::future
 
 std::promise -- Used to set value/ exceptions
 std::future -- Used to get value from promise
