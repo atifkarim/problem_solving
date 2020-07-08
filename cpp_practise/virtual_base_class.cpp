@@ -26,7 +26,7 @@ class B:virtual public A{
         }
 };
 
-class C:virtual public A{
+class C: public virtual A{ // virtual can be written befor or after of public word
     public:
         void PrintC(){
             cout<<"I am Class C who is the child of class A and i know that value of i in A is: "<<i<<endl;
