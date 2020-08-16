@@ -20,7 +20,7 @@ int main()
 
 	day = Wed; 
 
-	cout << day; 
+	cout << day<< endl; 
 
 	return 0; 
 } 
