@@ -1,5 +1,6 @@
 /*
 Many things learned from Niton Bangla book , C related
+https://www.programiz.com/cpp-programming/bitwise-operators
 */
 
 #include <bitset>
