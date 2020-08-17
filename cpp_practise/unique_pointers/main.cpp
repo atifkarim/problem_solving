@@ -37,6 +37,16 @@ int main(){
     std::unique_ptr<Test> t5 = std::make_unique<Test> (1400); // c++14 style smart pointer
 
     cout<<"Accessing get_data fucntion by t4 : "<<t4->get_data ()<<endl;
+    int a = 90;
+    int *my_ptr;
+    cout<<"\n\nGarbage val is here for general pointer: my_ptr: "<<my_ptr<<" ,*my_ptr: "<<*my_ptr<<" , &my_ptr: "<<&my_ptr<<endl;
+    my_ptr = &a;
+    std::unique_ptr<int> my_smart_ptr_1{new int};
+    cout<<"Is there any garbage val for my_smart_ptr_1 address: "<<&my_smart_ptr_1<<" and val for my_smart_ptr_1: "<<*my_smart_ptr_1<<endl;
+    std::unique_ptr<int> my_smart_ptr{new int{a}};
+    cout<<"Is there any garbage val for my_smart_ptr address: "<<&my_smart_ptr<<" and val for my_smart_ptr: "<<*my_smart_ptr<<endl;
+    cout<<"a val: "<<a<<" , a address: "<<&a<<" ,ptr val: "<<*my_ptr<<" ,ptr address: "<<my_ptr<<" , this one for &my_ptr: "<<&my_ptr<<endl;
+    cout<<"\n\n";
     
 
     // cannot copy of equal smart pointer
