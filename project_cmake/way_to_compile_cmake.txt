@@ -1,0 +1,22 @@
+1/ Make a project_folder(my_cmake) and create two file-- main.cpp and CmakeLists.txt
+2/ What will be written in the file could be find by googling. Some sources are given in the following lines--
+** https://riptutorial.com/Download/cmake.pdf
+** https://cliutils.gitlab.io/modern-cmake/modern-cmake.pdf
+
+3/ So right now the structure is --
+my_cmake
+	--main.cpp
+	--CmakeLists.txt
+now in this directory open a terminal and run the following command--
+cmake . && cmake --build . && ./app
+// Here ./app nothing but the executable file name which is written in the CmakeLists.txt file
+Now the code will execute
+
+4/ Another way is in the project_folder at first create a folder named "build"
+5/ Then go to this build folder
+6/ Open a terminal
+7/ Execute consecutively--
+	cmake ..
+	cmake --build .
+8/ Except "cmake --build ." you can also write "make". (omit the inverted comma)
+9/ It will then create a executable file in the build folder.
