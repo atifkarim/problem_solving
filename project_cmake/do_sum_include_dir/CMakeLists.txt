@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.5)
+project(hello_world)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+add_library(applib foo.cpp)
+add_executable(app main.cpp)
+target_link_libraries(app applib)
