@@ -34,3 +34,6 @@ file(GLOB all_SRCS
         )
 
 add_executable(do_sum ${all_SRCS})
+message($HELLO_Developer_next_line_will_print_the_PATH)
+message(${PROJECT_SOURCE_DIR})
+set(CMAKE_VERBOSE_MAKEFILE on)
