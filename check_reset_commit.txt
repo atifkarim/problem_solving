@@ -1,2 +1,7 @@
 This is the initial commit, initial line of this file.
+<<<<<<< HEAD
 Now this is the second time of writing
+=======
+Now this is the second time of writing. During third time written this.
+Third time I am writig.
+>>>>>>> f1e0e4fdcf939b988a3a5f2d6591170de8428c63
