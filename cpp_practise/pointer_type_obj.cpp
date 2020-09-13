@@ -1,3 +1,8 @@
+/***
+ * In this code usage of pointer type obj is shown.
+ * Also see calling_function_using_another_class.cpp code
+ ***/
+
 #include <iostream>
 using namespace std;
 
@@ -14,10 +19,11 @@ int SUM::do_sum(int x, int y){
 int main(){
 
     int q; int p;
+    cout<<"Hey !!! give  two integer\n";
     cin>>q; cin>>p;
 
     SUM *ptrobj;
-    ptrobj = new SUM();
+    ptrobj = new SUM(); // Used constructor.
     ptrobj->a = 4;
     ptrobj->b = 5;
 
