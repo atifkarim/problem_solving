@@ -39,7 +39,7 @@ int main(){
         cout<<*(scores+i)<<endl;
     }
 
-    cout<<"Alter the value of the array suing pointer"<<endl;
+    cout<<"Alter the value of the array using pointer"<<endl;
     for (int a =0; a<3;a++){
         cin>>*(scores_ptr+a);
     }

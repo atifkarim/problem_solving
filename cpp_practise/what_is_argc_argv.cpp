@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
     // But if I write ./main atif bin karim
     // then it will print 4
     // ./main itself an argument so it prints 1 at the first time.
-    cout<<"argc is here %d\n"<<argc<<endl;
+    cout<<"argc is here: "<<argc<<endl;
 
     cout<<"\nNow Printing the content of argv\n";
     int i;

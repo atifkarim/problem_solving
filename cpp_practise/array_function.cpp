@@ -1,3 +1,8 @@
+/***
+ * Need of static array inside of the function, take a look
+ * https://stackoverflow.com/questions/45736922/why-is-it-needed-to-declare-an-array-as-static-when-returning-it-from-a-function
+ * ***/
+
 #include<iostream>
 #include<array>
 
@@ -29,10 +34,10 @@ int main(){
     int array[5]={10,20,30,40,50};
 
     int* new_array = my_array(array, 5);
-    cout<<"\nreturn val from main func: "<<sizeof(new_array)/sizeof(new_array[0])<<endl;
+    cout<<"\nSize of the returned pointer: "<<sizeof(new_array)/sizeof(new_array[0])<<endl;
 
-    cout<<"The following line will print the value of eturned variable which is actually a pointer"<<endl;
-    cout<<"Return val from the function is: "<<new_array<<" address is: "<<&new_array<<" and the val is: "<<*new_array<<endl;
+    cout<<"The following line will print the value of returned variable which is actually a pointer"<<endl;
+    cout<<"Return val from the function is: "<<new_array<<"\nAddress is: "<<&new_array<<"\nValue is: "<<*new_array<<endl;
     // cout<<"here array size: "<<new_array.size()<<endl;
     cout<<endl<<endl;
     cout<<"inside from  main func array is: "<<endl;
