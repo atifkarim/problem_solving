@@ -5,7 +5,7 @@ class Math{
 
     int a,b;
     public:
-        Math(int a =0, int b = 0);
+        Math(int c =0, int d = 0);
         int Sum();
 };
 
