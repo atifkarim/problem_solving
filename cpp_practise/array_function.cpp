@@ -23,6 +23,11 @@ cout<<here_array[i]<<" ";
 // cout<<"here array size: "<<sizeof(here_array[0])<<endl;
 // cout<<"here array size: "<<here_array.size()<<endl;
 
+cout<<"\nNew Topic\n";
+for(int i=0; i<5;i++){
+    cout<<array[i]<<" ";
+}
+
 return here_array;
 
 
