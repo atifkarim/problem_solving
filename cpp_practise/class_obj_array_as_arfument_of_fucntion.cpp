@@ -23,7 +23,7 @@ class name_class{
         // string GetNAME (){return name;}
 
         void Printname(){
-            cout<<"Name: "<<name<<endl;
+            cout<<"Name: "<<name;
         }
 
 };
