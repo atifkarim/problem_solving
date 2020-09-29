@@ -6,3 +6,14 @@ g++ -std=c++11 -pthread file_name.cpp -o output_file
 
 # to make Cmake file for threading code
 https://stackoverflow.com/questions/30734136/cmake-linking-error-pthread-enable-multithreading-to-use-stdthread-operation
+
+# to make symbolic link
+ sudo ln -s /usr/include/x86_64-linux-gnu/c++/7/bits/c++locale.h /usr/include/c++/7/bits/
+# (from x86 folder a file named c++locale.h is going to /usr/include/c++/7/bits/ folder as a symbolic link)
+
+ # to find all symlinked file
+ find -lname "*.h"
+ # this will find all symlinked file which are ended with .h extension
+
+ # to delete all symlinked file at a time
+ sudo find -lname "*.h" -delete

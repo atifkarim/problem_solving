@@ -8,7 +8,7 @@ using namespace std;
 class Account{
     public:
         virtual void withdraw(double amount){
-            cout<<"In Withdraw:: Base Class Account"<<endl;
+            cout<<"In Withdraw:: Base Class Account is called where amount is: "<<amount<<endl;
         }
        virtual ~ Account(){cout<<"Account destructor is called"<<endl;}
 };
@@ -17,7 +17,7 @@ class Savings:public Account{
 
     public:
         virtual void withdraw(double amount){
-            cout<<"In Withdraw:: Derived Class Savings"<<endl;
+            cout<<"In Withdraw:: Derived Class Savings is called where amount is: "<<amount<<endl;
         }
 
        virtual ~ Savings(){cout<<"Savings destructor is called"<<endl;}
@@ -26,7 +26,7 @@ class Savings:public Account{
 class Checking:public Account{
     public:
         virtual void withdraw(double amount){
-            cout<<"In Withdraw:: Derived Class Checking"<<endl;
+            cout<<"In Withdraw:: Derived Class Checking is called where amount is: "<<amount<<endl;
         }
 
        virtual ~ Checking(){cout<<"Checking destructor is called"<<endl;}
@@ -35,7 +35,7 @@ class Checking:public Account{
 class Trust:public Account{
     public:
         virtual void withdraw(double amount){
-            cout<<"In Withdraw:: Derived Class Trust"<<endl;
+            cout<<"In Withdraw:: Derived Class Trust is called where amount is: "<<amount<<endl;
         }
 
        virtual ~ Trust(){cout<<"Trust destructor is called"<<endl;}
@@ -71,6 +71,10 @@ int main(){
 
     // You will see that here each time Base destructor will be called while a Derived class's
     // destructor is called
+
+    cout<<"IF want to use any derived class without referencing base class\n";
+    Trust t2;
+    t2.withdraw(875);
 
     return 0;
 }
