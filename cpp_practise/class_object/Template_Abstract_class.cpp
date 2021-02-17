@@ -1,5 +1,7 @@
 /*
 Trying to use template abstract class
+source: http://www.yolinux.com/TUTORIALS/Cpp-Templates.html
+
 */
 
 #include <iostream>
