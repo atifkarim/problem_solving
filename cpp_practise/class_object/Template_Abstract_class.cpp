@@ -16,7 +16,7 @@ public:
     Base<T>(int x):base_Variable{x}{
         cout<<"Base Class Constructor is called and Mem Var: "<<base_Variable<<endl;
     }
-    virtual void do_something() = 0;
+    virtual void do_something(T val) = 0;
     protected:
         T base_Variable;
 };
@@ -28,7 +28,7 @@ class Der : public Base<int>
     public:
         Der(int a, int b):Base<int>{b}, derived_Variable{a}{}
         void show_der_val();
-        void do_something();
+        void do_something(int);
 
     private:
         int derived_Variable;
@@ -39,7 +39,7 @@ void Der::Der::show_der_val(){
     cout<<"val of derived class private mem is: "<<derived_Variable<<endl;
 }
 
-void Der::do_something(){
+void Der::do_something(int){
     cout<<"Just Printing\n";
 }
 
@@ -48,6 +48,6 @@ int main(){
 
     Der obj_der(9,3);
     obj_der.show_der_val();
-    obj_der.do_something();
+    obj_der.do_something(2);
     return 0;
 }
