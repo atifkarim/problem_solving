@@ -200,3 +200,4 @@ compile_commands.json
 *-prefix/
 
 # End of https://www.toptal.com/developers/gitignore/api/cmake
+make_dynamic_lib/some_info_cmake.txt
