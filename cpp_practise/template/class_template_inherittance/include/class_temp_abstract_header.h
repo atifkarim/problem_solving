@@ -19,7 +19,7 @@ public:
     }
     virtual void do_something(T val) = 0;
 
-    ~Base() {}
+    virtual ~Base() {}
 };
 
 class Der : public Base<int>
@@ -29,7 +29,7 @@ class Der : public Base<int>
         void show_der_val();
         void do_something(int);
 
-        ~Der(){}
+        virtual ~Der(){}
 
     private:
         int derived_Variable;
