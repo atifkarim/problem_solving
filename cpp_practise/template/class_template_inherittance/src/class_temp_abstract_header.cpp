@@ -9,7 +9,7 @@ void Der::Der::show_der_val(){
     std::cout<<"val of derived class private mem is: "<<derived_Variable<<std::endl;
 }
 
-// void Der::do_something(int s){
-//     std::cout<<"using virtual function from derived class when s:"<<s<<endl;
-// }
+void Der::do_something(int s){
+    std::cout<<"using virtual function from derived class when s:"<<s<<endl;
+}
 
