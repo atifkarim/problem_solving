@@ -14,6 +14,12 @@ class Base{ // Abstract class
 
     public:
         virtual void Show()=0; // pure virtual function
+
+        /**
+         * The reason for making the destructor virtual in the base class is that it simply
+         * removes the choice from derived classes. Their destructor becomes virtual by default.
+         */
+        virtual ~Base(){}
 };
 
 // Must All inherited class override the virtual function of Base Class( which inherit Base)
