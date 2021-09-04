@@ -55,12 +55,12 @@ int main()
 	// std::cout<<"op_size: "<<op_size<<std::endl;
 
 	// std::cout<<"op_ptr_array\n";
-	// for(unsigned int i = 0; i < op_size; i++)
-		// std::cout<<"Address: "<<(op_ptr_array+i)<<" , Value: "<<*(op_ptr_array+i)<<"\n";
+	for(unsigned int i = 0; i < op_size; i++)
+		std::cout<<"Address: "<<(op_ptr_array+i)<<" , Value: "<<*(op_ptr_array+i)<<"\n";
         /* Here only addresses are same with `local array` and
         address pointed by op_ptr_array_ pointer` which you will find in op_calculation
         function but values are different*/
-    // std::cout<<"\n";
+    std::cout<<"\n";
 
 	delete [] ip_ptr_array;
 	delete [] op_ptr_array;
