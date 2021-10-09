@@ -58,9 +58,9 @@ int main()
 
 	// function calling to get output data
 	algo_fun(ip_ptr_array,
-	               ip_size,
-	               &op_ptr_array,
-	               &op_size);
+	         ip_size,
+	         &op_ptr_array,
+	         &op_size);
 
 	delete [] ip_ptr_array;
 	delete [] op_ptr_array;
