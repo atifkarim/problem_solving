@@ -5,6 +5,8 @@
  */
 
 #include <iostream>
+#include <bitset>
+#include <cmath>
 
 class Do_Fun
 {
@@ -33,6 +35,17 @@ class Do_Fun
 			float test_c;
 			void set_value_c_from_class(Do_Fun &b);
 		};
+
+		// struct to see how can be returned fromm function
+		struct Status{
+			int a;
+			float b;
+			int c;
+		};
+
+		void Get_Status(Status *ptr_status);
+		Status Get_Status_Ptr(Status *ptr_status);
+		Status Get_Status_Ref(Status &ref_status);
 
 	protected:
 		int a_;
@@ -71,6 +84,43 @@ void Do_Fun::Do_Job_Struct::set_value_c_from_class(Do_Fun &b)
 	test_c = b.do_sub();
 }
 
+void Do_Fun::Get_Status(Status *ptr_status)
+{
+	ptr_status-> a = 65;
+}
+
+Do_Fun::Status Do_Fun::Get_Status_Ptr(Status *ptr_status)
+{
+	ptr_status-> b = 65.87;
+	return *ptr_status;
+}
+
+Do_Fun::Status Do_Fun::Get_Status_Ref(Status &ref_status)
+{
+	ref_status.c = 154;
+	return ref_status;
+}
+
+// return bit value from unsigned int
+void find_bit_value(unsigned int x)
+{
+	unsigned int value = x;
+	std::string value_bin = std::bitset<2>(value).to_string();
+	std::cout<<"value_bin: "<<value_bin<<"\n";
+	std::cout<<"value_bin len: "<<value_bin.length()<<"\n";
+	std::cout<<"bit 0: value_bin[0]: "<<value_bin[0]<<std::endl;
+	std::cout<<"bit 1: value_bin[1]: "<<value_bin[1]<<std::endl;
+
+	int conv_int = std::stoi(value_bin);
+	std::cout<<"conv_int: "<<conv_int<<std::endl;
+
+	// charecter conversion to int
+	// https://stackoverflow.com/questions/5029840/convert-char-to-int-in-c-and-c
+	int conv_char = value_bin[0] - '0';
+	std::cout<<"conv_char: "<<conv_char<<std::endl;
+	std::cout<<"add 3 with conv_char: "<<conv_char + 3<<std::endl;
+}
+
 int main()
 {
 	// instance of Do_Fun class
@@ -97,5 +147,38 @@ int main()
 
 	// print value of test_c of Do_Job_Struct which is set by the value of do_sub() function of Do_Fun class
 	std::cout<<"value of test_c: "<<job_struct_obj.test_c<<std::endl;
+
+	// return value as struct
+	Do_Fun::Status ret_status_obj;
+	fun_obj.Get_Status(&ret_status_obj);
+	std::cout<<"status struct a: "<<ret_status_obj.a<<std::endl;
+
+	fun_obj.Get_Status_Ptr(&ret_status_obj);
+	std::cout<<"status struct b: "<<ret_status_obj.b<<std::endl;
+
+	fun_obj.Get_Status_Ref(ret_status_obj);
+	std::cout<<"status struct c: "<<ret_status_obj.c<<std::endl;
+
+	find_bit_value(2);
+
+	std::string a = "karim";
+	for (int i = 0; i< a.length(); i++)
+	{
+		std::cout<<a[i]<<" : ";
+	}
+	std::cout<<"\n";
+
+	// if a value is unsigned int but I need to get the signed bit presentationn then do following
+	unsigned int given_uint_num = 4294967198;
+	std::cout<<"corresponsing signed num: "<<static_cast<int>(given_uint_num)<<std::endl;
+	// Another way
+	int conv_sign_num = given_uint_num;
+	std::cout<<"conv_sign_num: "<<conv_sign_num<<std::endl;
+
+	// log calc to check it return float or not
+	float log_calc = 10 * log10(2);
+	std::cout<<"log calc: "<<log_calc<<std::endl;
+
+
 	return 0;
 }
