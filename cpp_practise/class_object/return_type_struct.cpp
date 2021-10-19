@@ -47,6 +47,18 @@ class Do_Fun
 		Status Get_Status_Ptr(Status *ptr_status);
 		Status Get_Status_Ref(Status &ref_status);
 
+		// Declare struct Country, set value for it and print value of the member in the console
+		struct Country
+		{
+			std::string name_;
+			unsigned int population_;
+			unsigned int area_;
+			std::string continent_;
+		};
+
+		Country Fill_Country();
+		void Print_Country(Country &country);
+
 	protected:
 		int a_;
 		int b_;
@@ -121,6 +133,29 @@ void find_bit_value(unsigned int x)
 	std::cout<<"add 3 with conv_char: "<<conv_char + 3<<std::endl;
 }
 
+Do_Fun::Country Do_Fun::Fill_Country()
+{
+	Country country;
+	country.name_ = "Bangladesh";
+	country.population_ = 1 << 22;
+	country.area_ = 9800;
+	country.continent_ = "Asia";
+
+	return country;
+}
+
+void Do_Fun::Print_Country(Country &country)
+{
+	std::cout
+	<<"Country Information"<<std::endl
+	<<"==================="<<std::endl
+	<<"   Name:           "<<country.name_<< std::endl
+	<<"   Population:     "<<country.population_<< std::endl
+	<<"   Area:           "<<country.area_<< std::endl
+	<<"   Continent:      "<<country.continent_<< std::endl<<std::endl;
+
+}
+
 int main()
 {
 	// instance of Do_Fun class
@@ -160,6 +195,10 @@ int main()
 	std::cout<<"status struct c: "<<ret_status_obj.c<<std::endl;
 
 	find_bit_value(2);
+
+	Do_Fun::Country country_obj;
+	country_obj = fun_obj.Fill_Country();
+	fun_obj.Print_Country(country_obj);
 
 	std::string a = "karim";
 	for (int i = 0; i< a.length(); i++)
