@@ -43,6 +43,7 @@ int main(){
 	cout<<"initially b: "<<b<<" and gn_ptr: "<<*gn_ptr<<endl;
 	*gn_ptr = 87;
 	cout<<"later b: "<<b<<" and gn_ptr: "<<*gn_ptr<<endl;
+	make_new_line();
 	}
 	/****************************
 	 ******* SMART POINTER ******
@@ -120,6 +121,7 @@ int main(){
 	std::shared_ptr<int> shr_p1{new int {var1}};
 	cout<<"var1: "<<var1<<" , adress &var1: "<<&var1<<endl;
 	cout<<"*shr_p1: "<<*shr_p1<<" , adress shr_p1.get(): "<<shr_p1.get()<<endl;
+	cout<<"shr_p1 count: "<<shr_p1.use_count()<<endl;
 	std::shared_ptr<int> shr_p2 = shr_p1;
 	cout<<"copying done from shr_p1 to shr_p2\n";
 	cout<<"*shr_p2: "<<*shr_p2<<" , adress shr_p2.get(): "<<shr_p2.get()<<endl;
