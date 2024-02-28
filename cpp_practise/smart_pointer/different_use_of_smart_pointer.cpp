@@ -190,8 +190,14 @@ int main(){
 	cout<<"Accessing class using Weak Pointer\n";
 	std::shared_ptr<Test> t7 = std::make_shared<Test>(56);
 	cout<<"Accessing get_data fucntion by t7 : "<<t7->get_data ()<<endl;
-	// std::weak_ptr<Test> p_weak1(t7);
-	// cout<<"Accessing get_data fucntion by p_weak1 : "<<p_weak1->get_data ()<<endl;
+	std::weak_ptr<Test> p_weak1(t7);
+
+	// Check if the object is still alive
+    if (auto shared = p_weak1.lock()) {
+        std::cout << "Accessing get_data function by p_weak1: " << shared->get_data() << std::endl;
+    } else {
+        std::cout << "Object is no longer alive" << std::endl;
+    }
 
 	}
 
